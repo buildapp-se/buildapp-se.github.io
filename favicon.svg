@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#211F1A"/>
-  <text x="14" y="44" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="34" fill="#EAE8E0">b.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
+  <style>
+    .bg{fill:#211F1A} .fg{fill:#EDEAE2}
+    @media (prefers-color-scheme: dark){ .bg{fill:#EDEAE2} .fg{fill:#211F1A} }
+  </style>
+  <rect x="1" y="1" width="50" height="50" rx="10" class="bg"/>
+  <polygon points="26,11 40,24 12,24" class="fg"/>
+  <rect x="15" y="24" width="22" height="16" class="fg"/>
+  <rect x="22" y="30" width="8" height="10" class="bg"/>
 </svg>
