@@ -1,2 +1,170 @@
 <!doctype html>
-<html lang="sv"><head><meta charset="utf-8"><title>buildapp.se</title></head><body><h1>buildapp.se</h1></body></html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>buildapp.se</title>
+<meta name="description" content="En samling småprojekt: Sipdeck, Grammat, Lär dig Claude Code och Arbetarrörelsens tidslinje.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#DFDDD5; --wall-2:#D2CFC5; --surface:#EAE8E0;
+  --ink:#211F1A; --ink-2:#6E6A5D; --line:rgba(33,31,26,.14);
+  --font-display:'Big Shoulders Display',sans-serif;
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --wall:#18181A; --wall-2:#222224; --surface:#201F1F;
+    --ink:#EDEAE2; --ink-2:#9C978A; --line:rgba(237,234,226,.14);
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--wall);color:var(--ink);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.street-sign{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,4vw,3rem);background:var(--wall-2);border-bottom:1px solid var(--line)}
+.wordmark{font-family:var(--font-display);font-weight:900;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.01em;text-transform:uppercase}
+.wordmark .dot{opacity:.5}
+.eyebrow{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:.35em}
+
+.lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:100px;overflow:hidden;flex-shrink:0}
+.lang-toggle button{background:transparent;border:0;cursor:pointer;padding:.4em .9em;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2)}
+.lang-toggle button.active{background:var(--ink);color:var(--wall-2)}
+
+.street{display:flex;flex-direction:column}
+
+.door{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,3vw,1.75rem);padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,4vw,3rem);border-bottom:1px solid var(--line);transition:background-color .18s ease}
+.door:hover,.door:focus-visible{background:color-mix(in srgb, var(--accent) 8%, transparent)}
+.door-icon{position:relative;width:clamp(52px,8vw,72px);height:clamp(52px,8vw,72px);border-radius:22%;overflow:hidden;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .18s ease}
+.door:hover .door-icon,.door:focus-visible .door-icon{transform:translateY(-2px)}
+.door-icon img{width:100%;height:100%;object-fit:cover}
+.knob{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);right:-3px;top:50%;transform:translateY(-50%);box-shadow:0 0 0 3px var(--surface)}
+
+.door-body{min-width:0}
+.door-title{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:-.005em;text-transform:uppercase;line-height:1.05}
+.door-tag{display:block;font-size:.85rem;font-weight:600;color:var(--accent);margin-top:.3em}
+.door-desc{display:block;font-size:.9rem;color:var(--ink-2);margin-top:.5em;max-width:52ch}
+
+.door-slug{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;border-bottom:1px solid transparent;transition:border-color .18s ease}
+.door:hover .door-slug,.door:focus-visible .door-slug{border-color:var(--accent);color:var(--accent)}
+
+.street-foot{padding:1.5rem clamp(1.25rem,4vw,3rem) 3rem;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);text-align:center}
+
+@media (max-width: 640px){
+  .door{grid-template-columns:auto 1fr;row-gap:.25rem}
+  .door-slug{grid-column:2;grid-row:2;justify-self:start}
+}
+@media (prefers-reduced-motion: reduce){
+  .door,.door-icon,.door-slug{transition:none}
+  .door:hover .door-icon,.door:focus-visible .door-icon{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="street-sign">
+  <div>
+    <span class="wordmark">buildapp<span class="dot">.</span>se</span>
+    <span class="eyebrow" data-sv="en samling småprojekt" data-en="a small collection of projects">en samling småprojekt</span>
+  </div>
+  <div class="lang-toggle" role="group" aria-label="Språk / Language">
+    <button type="button" data-lang="sv">SV</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main class="street">
+
+  <a class="door" style="--accent:#2F6B3F" href="https://buildapp.se/sipdeck/">
+    <span class="door-icon"><img src="https://buildapp.se/sipdeck/icons/icon-512.png" alt="" width="72" height="72" loading="lazy"></span>
+    <span class="door-body">
+      <span class="door-title">Sipdeck</span>
+      <span class="door-tag">Swipe. Save. Shake.</span>
+      <span class="door-desc"
+        data-sv="92 cocktails i en svepbar kortlek. Svep höger för att spara, vänster för att skippa, snurra på hjulet om du inte kan bestämma dig. Gratis, med konto följer favoriterna med mellan mobil och dator."
+        data-en="92 cocktails in a swipeable card deck. Swipe right to save, left to skip, spin the wheel if you can't decide. Free, with an account your favorites follow you across devices.">92 cocktails i en svepbar kortlek. Svep höger för att spara, vänster för att skippa, snurra på hjulet om du inte kan bestämma dig. Gratis, med konto följer favoriterna med mellan mobil och dator.</span>
+    </span>
+    <span class="door-slug">/sipdeck</span>
+    <span class="knob" aria-hidden="true"></span>
+  </a>
+
+  <a class="door" style="--accent:#9E2B3E" href="https://buildapp.se/recept/">
+    <span class="door-icon"><img src="https://buildapp.se/recept/icons/icon-512.png" alt="" width="72" height="72" loading="lazy"></span>
+    <span class="door-body">
+      <span class="door-title">Grammat</span>
+      <span class="door-tag" data-sv="Recept och inköpslista, allt i gram." data-en="Recipes and a shopping list, all in grams.">Recept och inköpslista, allt i gram.</span>
+      <span class="door-desc"
+        data-sv="Klistra in en länk eller ett recept, AI:n gör om det till rätt format automatiskt. Inköpslistan slår ihop alla recept till en lista du bockar av i macken. Gratis, dela konto med sambon och spara era egna recept."
+        data-en="Paste in a link or a recipe and AI reformats it for you. The shopping list adds every recipe together into one list you check off in the store. Free, share an account with your partner and save your own recipes.">Klistra in en länk eller ett recept, AI:n gör om det till rätt format automatiskt. Inköpslistan slår ihop alla recept till en lista du bockar av i macken. Gratis, dela konto med sambon och spara era egna recept.</span>
+    </span>
+    <span class="door-slug">/recept</span>
+    <span class="knob" aria-hidden="true"></span>
+  </a>
+
+  <a class="door" style="--accent:#3D6B7D" href="https://buildapp.se/ai/">
+    <span class="door-icon"><img src="./assets/ai-mark.png" alt="" width="72" height="72" loading="lazy"></span>
+    <span class="door-body">
+      <span class="door-title" data-sv="Lär dig Claude Code" data-en="Learn Claude Code">Lär dig Claude Code</span>
+      <span class="door-tag" data-sv="Kuraterad länklista, i rätt ordning." data-en="A curated list of resources, in the right order.">Kuraterad länklista, i rätt ordning.</span>
+      <span class="door-desc"
+        data-sv="Officiell dokumentation, kurser, guider och repon, prioriterade så du vet var du ska börja. Bocka av det du gått igenom och rösta fram det bästa. Gratis, ingen inloggning behövs."
+        data-en="Official docs, courses, guides and repos, ranked so you know where to start. Check off what you've done and vote for the best. Free, no login needed.">Officiell dokumentation, kurser, guider och repon, prioriterade så du vet var du ska börja. Bocka av det du gått igenom och rösta fram det bästa. Gratis, ingen inloggning behövs.</span>
+    </span>
+    <span class="door-slug">/ai</span>
+    <span class="knob" aria-hidden="true"></span>
+  </a>
+
+  <a class="door" style="--accent:#B0342B" href="https://buildapp.se/tidslinje/">
+    <span class="door-icon"><img src="https://buildapp.se/tidslinje/favicon.svg" alt="" width="72" height="72" loading="lazy"></span>
+    <span class="door-body">
+      <span class="door-title" data-sv="Arbetarrörelsens tidslinje" data-en="The Labor Movement's Timeline">Arbetarrörelsens tidslinje</span>
+      <span class="door-tag" data-sv="Svensk arbetarrörelse, 1846 till idag." data-en="The Swedish labor movement, 1846 to today.">Svensk arbetarrörelse, 1846 till idag.</span>
+      <span class="door-desc"
+        data-sv="Klicka dig igenom tre epoker och fördjupa dig i varje händelse med poddar och videolänkar. Gratis och öppen för alla, byggd för fackliga kurser och nyfikna."
+        data-en="Click through three eras and dig deeper into each event with podcasts and video links. Free and open to everyone, built for union courses and the curious.">Klicka dig igenom tre epoker och fördjupa dig i varje händelse med poddar och videolänkar. Gratis och öppen för alla, byggd för fackliga kurser och nyfikna.</span>
+    </span>
+    <span class="door-slug">/tidslinje</span>
+    <span class="knob" aria-hidden="true"></span>
+  </a>
+
+</main>
+
+<footer class="street-foot">
+  <span data-sv="Fler dörrar öppnas efter hand." data-en="More doors open over time.">Fler dörrar öppnas efter hand.</span>
+</footer>
+
+<script>
+(function(){
+  var KEY = 'buildapp-lang';
+  var toggle = document.querySelector('.lang-toggle');
+  var buttons = toggle.querySelectorAll('button');
+
+  function apply(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-sv]').forEach(function(el){
+      el.textContent = lang === 'sv' ? el.getAttribute('data-sv') : el.getAttribute('data-en');
+    });
+    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+  }
+
+  var saved = localStorage.getItem(KEY);
+  var guess = (navigator.language || 'sv').toLowerCase().indexOf('sv') === 0 ? 'sv' : 'en';
+  apply(saved || guess);
+
+  toggle.addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-lang]');
+    if(!btn) return;
+    localStorage.setItem(KEY, btn.dataset.lang);
+    apply(btn.dataset.lang);
+  });
+})();
+</script>
+
+</body>
+</html>
