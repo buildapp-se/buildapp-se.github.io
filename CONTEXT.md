@@ -36,6 +36,21 @@ produkt, den är huset, och varje undersida är en dörr.
 - Ingen build-time-i18n. Varje översatt textnod har `data-sv` och `data-en`.
 - Ordningen på dörrarna är nyast repo överst.
 
+## Designtokens
+
+CSS custom properties i `:root`, ljust och mörkt via `prefers-color-scheme`.
+
+- `--wall`, `--wall-2`, `--surface`: betong och kalksten. Ljust `#DFDDD5`,
+  `#D2CFC5`, `#EAE8E0`. Mörkt `#18181A`, `#222224`, `#201F1F`.
+- `--ink`, `--ink-2`: text. Ljust `#211F1A` och `#6E6A5D`. Mörkt `#EDEAE2` och `#9C978A`.
+- Typsnitt: **Big Shoulders Display** för rubriker och wordmark, kondenserad
+  skyltkänsla. **IBM Plex Sans** för brödtext. **IBM Plex Mono** för url-slugs och
+  språktoggel.
+
+Varje `.door` sätter `--accent` inline med appens egen färg. `.knob` är en liten
+accentprick i ikonrutans hörn, byggd på mönstret som redan fanns organiskt i tre av
+fyra appikoner.
+
 ## Environments and operations
 
 `git push` till `main`, GitHub Pages bygger automatiskt på ungefär trettio sekunder.
