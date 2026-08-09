@@ -4,7 +4,7 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Ta fram ett eget grafiskt paket per undersida, i första hand og:image för länkförhandsvisningar i Messenger, Facebook och Slack
 blockers: []
-reviewedAt: 2026-07-27
+reviewedAt: 2026-08-09
 ---
 
 # Handoff: buildapp.se
