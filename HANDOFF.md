@@ -2,7 +2,7 @@
 schemaVersion: 1
 status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
-nextAction: Ta fram delningsbilder för de fristående projekten bakom dörrarna. Katalogsidans og:image är klar.
+nextAction: Inget öppet. Länkförhandsvisningar fungerar på katalogsidan och samtliga undersidor.
 blockers: []
 reviewedAt: 2026-08-27
 ---
@@ -32,6 +32,13 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
   och mäter den själv, vilket är varför en förhandsvisning ibland dyker upp först
   vid andra delningen.
 
+**Rättelse samma dag:** det här repot påstod i både `HANDOFF.md` och `BACKLOG.md` att
+undersidorna saknade `og:image`. Fel. Kontroll mot live visar att `/sipdeck`,
+`/grammat`, `/ai` och `/tidslinje` alla har egen 1200x630 PNG med
+`summary_large_image`. Undersidorna bor i **egna repon** som deployas under samma
+domän, så när de fick sina delningsbilder uppdaterades aldrig det här repots
+dokument. Påståenden om undersidor kontrolleras mot live, inte mot den här filen.
+
 - Katalogsidan byggd med arkitektonisk skyltning som koncept: varje undersida är en
   dörr i sin egen färg nerför en betongkorridor.
 - Egen favicon som byter färg via `prefers-color-scheme` inbyggt i SVG:n, med
@@ -48,8 +55,8 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
 
 ## Unresolved details
 
-- Undersidorna har fortfarande inget eget grafiskt paket: ingen egen `og:image`,
-  och de lånar `buildapp.se`:s touch-ikoner. Katalogsidan är klar sedan 2026-08-27.
+- Undersidorna lånar fortfarande `buildapp.se`:s touch-ikoner. Egen `og:image` har
+  de däremot, det påståendet var fel, se rättelsen under Recent work.
 - Säkerhetsheaders saknas, eftersom GitHub Pages ignorerar `_headers`. Löses med en
   Transform Rule i Cloudflare tillsammans med de andra Pages-sajterna. Se
   säkerhetsrepot.
@@ -71,5 +78,5 @@ Rör den aldrig manuellt.
 Katalogsidans delningsbild är klar men **inte pushad**. Verifiera i produktion efter
 push, och kör Facebooks Sharing Debugger så cachen töms.
 
-Därefter `og:image` per undersida, samma metod. Det är det som syns när någon delar
-en länk in i ett enskilt projekt.
+Undersidornas `og:image` behöver inget arbete, de har redan egna. Enda kvarvarande
+grafikpunkten är touch-ikoner per app, vilket är kosmetik.

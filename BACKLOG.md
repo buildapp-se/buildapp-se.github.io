@@ -5,8 +5,11 @@
 - [x] `og:image` för katalogsidan, `assets/og-image.png` (2026-08-27). Renderad från
   en HTML-mall i sajtens egen stil med `npx playwright screenshot`, mallen ligger inte
   i repot.
-- [ ] Eget `og:image` per undersida. Katalogsidan är klar, de fristående projekten
-  bakom dörrarna har fortfarande ingen egen delningsbild.
+- [x] Eget `og:image` per undersida. **Punkten var redan gjord när den skrevs.**
+  Kontrollerat live 2026-08-27: `/sipdeck`, `/grammat`, `/ai` och `/tidslinje`
+  serverar alla en egen 1200x630 PNG med `summary_large_image`. Undersidorna bor i
+  egna repon som deployas under samma domän, så deras fixar syntes aldrig här.
+  Kontrollera undersidor mot live, aldrig mot det här repots dokument.
 - [ ] Eventuellt egna touch-ikoner per app, i stället för att låna `buildapp.se`:s.
 
 ## Säkerhet
