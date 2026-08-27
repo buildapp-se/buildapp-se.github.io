@@ -59,6 +59,10 @@ a{color:inherit}
 .wordmark{font-family:var(--font-display);font-weight:900;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.01em;text-transform:uppercase}
 .wordmark .dot{opacity:.5}
 .eyebrow{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:.35em}
+.sign-right{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+.lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:100px;overflow:hidden;flex-shrink:0}
+.lang-toggle button{background:transparent;border:0;cursor:pointer;padding:.4em .9em;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2)}
+.lang-toggle button.active{background:var(--ink);color:var(--wall-2)}
 .back{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;border-bottom:1px solid transparent;text-decoration:none}
 .back:hover{border-color:var(--accent);color:var(--accent)}
 
@@ -94,16 +98,23 @@ main a:hover{border-color:var(--accent)}
       </svg>
       <div>
         <span class="wordmark">buildapp<span class="dot">.</span>se</span>
-        <span class="eyebrow">en samling småprojekt</span>
+        <span class="eyebrow" data-sv="en samling småprojekt" data-en="a small collection of projects">en samling småprojekt</span>
       </div>
     </a>
-    <a class="back" href="/">&larr; Tillbaka</a>
+    <div class="sign-right">
+      <div class="lang-toggle" role="group" aria-label="Språk / Language">
+        <button type="button" data-lang="sv">SV</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="back" href="/" data-sv="&larr; Tillbaka" data-en="&larr; Back">&larr; Tillbaka</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <h1>Integritetspolicy</h1>
+<div lang="sv" data-doc="sv">
+<h1>Integritetspolicy</h1>
   <p class="meta">Senast uppdaterad 27 augusti 2026 &middot; Version 1.0</p>
 
   <p class="lede">buildapp.se är en katalogsida som pekar vidare till fristående hobbyprojekt. Här finns inga annonser, ingen beteendespårning och ingen försäljning av personuppgifter. Den här sidan gäller själva katalogsidan. Varje projekt bakom en dörr har en egen policy, eftersom de behandlar olika mycket.</p>
@@ -155,12 +166,99 @@ main a:hover{border-color:var(--accent)}
 
   <h2>Ändringar</h2>
   <p>Väsentliga ändringar publiceras här med nytt datum. Om ett nytt ändamål kräver samtycke hämtas det in innan behandlingen börjar.</p>
+</div>
+
+<div lang="en" data-doc="en" hidden>
+  <h1>Privacy policy</h1>
+  <p class="meta">Last updated 27 August 2026 &middot; Version 1.0</p>
+
+  <p class="lede">buildapp.se is a directory page that points on to standalone hobby projects. There is no advertising, no behavioural tracking and no sale of personal data. This page covers the directory page itself. Each project behind a door has its own policy, because they process different amounts of data.</p>
+
+  <h2>Who is responsible for the data?</h2>
+  <p>The data controller is <strong>Patrik Löfgren</strong>, Umeå, Sweden. Contact <a href="mailto:kontakt@orgutveckling.se">kontakt@orgutveckling.se</a> with questions or to exercise your rights.</p>
+
+  <h2>What data is processed?</h2>
+  <p>The directory page is static and has no accounts, forms or database. Data still arises in the technical delivery:</p>
+  <ul>
+    <li><strong>Cloudflare</strong> delivers and protects the site. In that step, IP address, time, requested address and browser information are processed.</li>
+    <li><strong>GitHub Pages</strong> is the host and keeps equivalent technical logs.</li>
+    <li><strong>Google Fonts</strong> serves the page's typefaces. Your IP address goes to Google when your browser fetches them. It is the only third party that receives data directly from your browser.</li>
+  </ul>
+  <p>No profiling or automated decision-making with legal or similarly significant effects takes place.</p>
+
+  <h2>Purposes and legal bases</h2>
+  <ul>
+    <li><strong>Delivery, security and operation:</strong> our legitimate interest in the page working, being reachable and being protected against abuse.</li>
+    <li><strong>The language choice:</strong> to provide the feature you explicitly use when you switch language.</li>
+    <li><strong>Support:</strong> to answer your request if you write to the contact address.</li>
+  </ul>
+
+  <h2>Cookies and storage on your device</h2>
+  <p>The directory page sets no cookies and loads no analytics service. It uses <code>localStorage</code> for exactly one thing: remembering whether you chose Swedish or English, under the key <code>buildapp-lang</code>. That storage is necessary for a feature you request yourself and therefore needs no consent, which is why there is no cookie banner. You can remove it by clearing site data for buildapp.se in your browser.</p>
+  <p>If non-essential measurement or advertising is introduced later, this page will be updated, and consent obtained, before that technology is enabled.</p>
+
+  <h2>Retention</h2>
+  <ul>
+    <li>The language choice stays in your browser until you clear site data.</li>
+    <li>Technical logs at Cloudflare and GitHub follow their own routines and normally range from days to weeks.</li>
+    <li>Support email is normally deleted no later than 12 months after the matter is closed.</li>
+  </ul>
+
+  <h2>Providers and transfers outside the EU/EEA</h2>
+  <p>Cloudflare provides delivery and protection, GitHub the hosting and Google the typefaces. All are US companies and may process data outside the EU/EEA. Provider data protection terms and approved transfer mechanisms, such as the Data Privacy Framework and Standard Contractual Clauses where applicable, are used for these transfers.</p>
+
+  <h2>The projects behind the doors</h2>
+  <p>Each project is its own service with its own processing, and several of them have accounts and stored data that the directory page does not. Read their policies separately:</p>
+  <ul>
+    <li><a href="/sipdeck/info.html">Sipdeck: privacy, local storage and terms</a></li>
+    <li><a href="/grammat/integritet.html">Grammat: privacy policy (Swedish)</a></li>
+    <li><a href="/ai/integritet.html">Learn Claude Code: privacy policy</a></li>
+    <li><a href="/tidslinje/integritet.html">The labour movement timeline: privacy policy (Swedish)</a></li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>You may request access, correction, deletion, restriction or data portability, and object to processing based on legitimate interests. Requests are handled manually through the contact address above. You may also complain to the <a href="https://www.imy.se/" rel="external noopener" target="_blank">Swedish Authority for Privacy Protection (IMY)</a>, the supervisory authority in Sweden.</p>
+
+  <h2>Changes</h2>
+  <p>Material changes will be published here with a new date. If a new purpose requires consent, it will be requested before processing begins.</p>
+</div>
 
 </main>
 
 <footer class="street-foot">
-  <div class="wrap">buildapp.se &middot; <a href="/">Tillbaka till dörrarna</a></div>
+  <div class="wrap">buildapp.se &middot; <a href="/" data-sv="Tillbaka till dörrarna" data-en="Back to the doors">Tillbaka till dörrarna</a></div>
 </footer>
+
+<script>
+(function(){
+  // Samma nyckel som katalogsidan, sa sprakvalet foljer med hit.
+  var KEY = 'buildapp-lang';
+  var buttons = document.querySelectorAll('.lang-toggle button');
+
+  function apply(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-doc]').forEach(function(el){
+      el.hidden = el.getAttribute('data-doc') !== lang;
+    });
+    document.querySelectorAll('[data-sv]').forEach(function(el){
+      el.textContent = lang === 'sv' ? el.getAttribute('data-sv') : el.getAttribute('data-en');
+    });
+    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+  }
+
+  var saved;
+  try { saved = localStorage.getItem(KEY); } catch (e) { saved = null; }
+  var guess = (navigator.language || 'sv').toLowerCase().indexOf('sv') === 0 ? 'sv' : 'en';
+  apply(saved || guess);
+
+  document.querySelector('.lang-toggle').addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-lang]');
+    if(!btn) return;
+    try { localStorage.setItem(KEY, btn.dataset.lang); } catch (e) {}
+    apply(btn.dataset.lang);
+  });
+})();
+</script>
 
 </body>
 </html>
