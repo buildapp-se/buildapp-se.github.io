@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integritetspolicy | buildapp.se</title>
+<meta name="description" content="Hur buildapp.se behandlar personuppgifter: vad som samlas in när du besöker katalogsidan, varför, hur länge och vilka rättigheter du har.">
+<link rel="canonical" href="https://buildapp.se/integritet.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="buildapp.se">
+<meta property="og:title" content="Integritetspolicy | buildapp.se">
+<meta property="og:description" content="Hur buildapp.se behandlar personuppgifter: vad som samlas in när du besöker katalogsidan, varför, hur länge och vilka rättigheter du har.">
+<meta property="og:url" content="https://buildapp.se/integritet.html">
+<meta property="og:image" content="https://buildapp.se/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Integritetspolicy | buildapp.se">
+<meta name="twitter:description" content="Hur buildapp.se behandlar personuppgifter: vad som samlas in när du besöker katalogsidan, varför, hur länge och vilka rättigheter du har.">
+<meta name="twitter:image" content="https://buildapp.se/assets/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#DFDDD5; --wall-2:#D2CFC5; --surface:#EAE8E0;
+  --ink:#211F1A; --ink-2:#6E6A5D; --line:rgba(33,31,26,.14);
+  --accent:#9E2B3E;
+  --font-display:'Big Shoulders Display',sans-serif;
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --wall:#18181A; --wall-2:#222224; --surface:#201F1F;
+    --ink:#EDEAE2; --ink-2:#9C978A; --line:rgba(237,234,226,.14);
+    --accent:#C9576A;
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--wall);color:var(--ink);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.wrap{max-width:760px;margin:0 auto;padding-left:clamp(1.25rem,4vw,3rem);padding-right:clamp(1.25rem,4vw,3rem)}
+
+/* Skylten är samma som på katalogsidan, så man vet att man är kvar i huset. */
+.street-sign{background:var(--wall-2);border-bottom:1px solid var(--line)}
+.sign-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:clamp(1.5rem,4vw,2.5rem);padding-bottom:clamp(1.5rem,4vw,2.5rem)}
+.brand{display:flex;align-items:center;gap:.7em;text-decoration:none}
+.brand-icon{flex-shrink:0;width:clamp(34px,6vw,42px);height:clamp(34px,6vw,42px)}
+.wordmark{font-family:var(--font-display);font-weight:900;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.01em;text-transform:uppercase}
+.wordmark .dot{opacity:.5}
+.eyebrow{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:.35em}
+.back{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;border-bottom:1px solid transparent;text-decoration:none}
+.back:hover{border-color:var(--accent);color:var(--accent)}
+
+main{padding-top:clamp(2rem,6vw,3.5rem);padding-bottom:clamp(3rem,8vw,5rem)}
+h1{font-family:var(--font-display);font-weight:900;font-size:clamp(2rem,6vw,3rem);text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+.meta{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-top:.9rem}
+h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.2rem,3.4vw,1.6rem);text-transform:uppercase;line-height:1.1;
+   margin-top:2.75rem;padding-top:1rem;border-top:1px solid var(--line)}
+h3{font-size:.95rem;font-weight:600;margin-top:1.5rem;color:var(--ink)}
+p{margin-top:.85rem;color:var(--ink-2);font-size:.95rem}
+p.lede{color:var(--ink);font-size:1.05rem;margin-top:1.25rem}
+ul{margin-top:.85rem;list-style:none}
+li{position:relative;padding:.5rem 0 .5rem 1.4rem;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.95rem}
+li::before{content:'/';position:absolute;left:0;font-family:var(--font-mono);color:var(--accent)}
+strong{color:var(--ink);font-weight:600}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--surface);padding:.1em .35em;border:1px solid var(--line)}
+main a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}
+main a:hover{border-color:var(--accent)}
+
+.street-foot{padding-top:1.5rem;padding-bottom:3rem;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);text-align:center;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header class="street-sign">
+  <div class="wrap sign-row">
+    <a class="brand" href="/">
+      <svg class="brand-icon" viewBox="0 0 52 52" aria-hidden="true">
+        <rect x="1" y="1" width="50" height="50" rx="10" fill="var(--ink)"/>
+        <polygon points="26,11 40,24 12,24" fill="var(--wall)"/>
+        <rect x="15" y="24" width="22" height="16" fill="var(--wall)"/>
+        <rect x="22" y="30" width="8" height="10" fill="var(--ink)"/>
+      </svg>
+      <div>
+        <span class="wordmark">buildapp<span class="dot">.</span>se</span>
+        <span class="eyebrow">en samling småprojekt</span>
+      </div>
+    </a>
+    <a class="back" href="/">&larr; Tillbaka</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Integritetspolicy</h1>
+  <p class="meta">Senast uppdaterad 27 augusti 2026 &middot; Version 1.0</p>
+
+  <p class="lede">buildapp.se är en katalogsida som pekar vidare till fristående hobbyprojekt. Här finns inga annonser, ingen beteendespårning och ingen försäljning av personuppgifter. Den här sidan gäller själva katalogsidan. Varje projekt bakom en dörr har en egen policy, eftersom de behandlar olika mycket.</p>
+
+  <h2>Vem ansvarar för uppgifterna?</h2>
+  <p>Personuppgiftsansvarig är <strong>Patrik Löfgren</strong>, Umeå, Sverige. Kontakta <a href="mailto:kontakt@orgutveckling.se">kontakt@orgutveckling.se</a> för frågor eller för att använda dina rättigheter.</p>
+
+  <h2>Vilka uppgifter behandlas?</h2>
+  <p>Katalogsidan är statisk och har varken konton, formulär eller databas. Uppgifter uppstår ändå i den tekniska leveransen:</p>
+  <ul>
+    <li><strong>Cloudflare</strong> levererar och skyddar sajten. I det ledet behandlas IP-adress, tidpunkt, efterfrågad adress och webbläsarinformation.</li>
+    <li><strong>GitHub Pages</strong> är webbhotellet och för motsvarande tekniska loggar.</li>
+    <li><strong>Google Fonts</strong> levererar sidans typsnitt. När din webbläsare hämtar dem går din IP-adress till Google. Det är den enda tredjeparten som får uppgifter direkt från din webbläsare.</li>
+  </ul>
+  <p>Ingen profilering och inget automatiserat beslutsfattande med rättsliga eller liknande betydande effekter sker.</p>
+
+  <h2>Varför och med vilken rättslig grund?</h2>
+  <ul>
+    <li><strong>Leverans, säkerhet och drift:</strong> berättigat intresse av att sidan fungerar, är nåbar och skyddad mot missbruk.</li>
+    <li><strong>Språkvalet:</strong> för att tillhandahålla den funktion du uttryckligen använder när du byter språk.</li>
+    <li><strong>Support:</strong> för att besvara din begäran om du skriver till kontaktadressen.</li>
+  </ul>
+
+  <h2>Cookies och lagring på din enhet</h2>
+  <p>Katalogsidan sätter inga cookies och laddar ingen analystjänst. Den använder <code>localStorage</code> till exakt en sak: att komma ihåg om du valt svenska eller engelska, under nyckeln <code>buildapp-lang</code>. Den lagringen är nödvändig för en funktion du själv begär och kräver därför inget samtycke, vilket är anledningen till att det inte finns någon cookiebanner. Du tar bort den genom att rensa webbplatsdata för buildapp.se i webbläsaren.</p>
+  <p>Om icke nödvändig mätning eller annonsering införs senare uppdateras den här sidan, och samtycke hämtas in, innan tekniken aktiveras.</p>
+
+  <h2>Lagringstid</h2>
+  <ul>
+    <li>Språkvalet ligger kvar i din webbläsare tills du rensar webbplatsdata.</li>
+    <li>Tekniska loggar hos Cloudflare och GitHub styrs av deras egna rutiner och rör sig normalt om dagar till veckor.</li>
+    <li>Supportmejl raderas normalt senast 12 månader efter att ärendet avslutats.</li>
+  </ul>
+
+  <h2>Leverantörer och överföring utanför EU/EES</h2>
+  <p>Cloudflare tillhandahåller leverans och skydd, GitHub webbhotellet och Google typsnitten. Samtliga är amerikanska bolag och kan behandla uppgifter utanför EU/EES. För dessa överföringar tillämpas leverantörernas dataskyddsvillkor och godkända överföringsmekanismer, exempelvis Data Privacy Framework och standardavtalsklausuler där de är tillämpliga.</p>
+
+  <h2>Projekten bakom dörrarna</h2>
+  <p>Varje projekt är en egen tjänst med egen behandling, och flera av dem har konton och sparad data som katalogsidan inte har. Läs deras policyer separat:</p>
+  <ul>
+    <li><a href="/sipdeck/info.html">Sipdeck: integritet, lokal lagring och villkor</a></li>
+    <li><a href="/grammat/integritet.html">Grammat: integritetspolicy</a></li>
+    <li><a href="/ai/integritet.html">Lär dig Claude Code: integritetspolicy</a></li>
+    <li><a href="/tidslinje/integritet.html">Arbetarrörelsens tidslinje: integritetspolicy</a></li>
+  </ul>
+
+  <h2>Dina rättigheter</h2>
+  <p>Du kan begära tillgång, rättelse, radering, begränsning eller dataportabilitet, och invända mot behandling som grundas på berättigat intresse. Begäran hanteras manuellt via kontaktadressen ovan. Du har också rätt att klaga hos <a href="https://www.imy.se/" rel="external noopener" target="_blank">Integritetsskyddsmyndigheten (IMY)</a>, som är tillsynsmyndighet i Sverige.</p>
+
+  <h2>Ändringar</h2>
+  <p>Väsentliga ändringar publiceras här med nytt datum. Om ett nytt ändamål kräver samtycke hämtas det in innan behandlingen börjar.</p>
+
+</main>
+
+<footer class="street-foot">
+  <div class="wrap">buildapp.se &middot; <a href="/">Tillbaka till dörrarna</a></div>
+</footer>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 schemaVersion: 1
 status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
-nextAction: Inget öppet. Länkförhandsvisningar fungerar på katalogsidan och samtliga undersidor.
+nextAction: Slå på Cloudflare Web Analytics på buildapp.se-zonen om besöksstatistik per sökväg önskas, och uppdatera då avsnittet Cookies i integritet.html innan beaconen aktiveras
 blockers: []
 reviewedAt: 2026-08-27
 ---
@@ -18,6 +18,26 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
 (det finns ingen `PROJECT.md`, den referensen var fel).
 
 ## Recent work
+
+**2026-08-27: integritetspolicy, ingen av sajterna hade informationsplikt.**
+
+- Ny `integritet.html` i katalogsidans gatu- och skyltdesign. Täcker Cloudflare,
+  GitHub Pages, Google Fonts och `localStorage`-nyckeln `buildapp-lang` som
+  språkväljaren använder. Länkar vidare till de fyra projektens egna policyer,
+  eftersom de behandlar olika mycket och katalogsidan inte kan tala för dem.
+- Sidfotslänk tillagd i `index.html`, tvåspråkig via `data-sv`/`data-en`.
+- **Ingen cookiebanner, och det är avsiktligt.** Samtyckeskravet i lagen om
+  elektronisk kommunikation triggar på lagring eller läsning på besökarens enhet.
+  Språkvalet är nödvändigt för en funktion besökaren själv begär och är därför
+  undantaget. GDPR:s informationsplikt gäller ändå, och den fyller policyn.
+- `og.source.html` sparad enligt konventionen i syskonrepona, med
+  renderingskommandot i en kommentar högst upp. Mallen låg tidigare bara i en
+  temp-katalog.
+
+**Öppet beslut:** Web Analytics är inte påslaget. Slås det på måste avsnittet
+Cookies i `integritet.html` uppdateras först, eftersom det i dag påstår att sidan
+inte laddar någon analystjänst.
+
 
 **2026-08-27: länkförhandsvisningen saknades helt.**
 
