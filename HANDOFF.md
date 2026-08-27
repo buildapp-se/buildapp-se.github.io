@@ -19,6 +19,18 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
 
 ## Recent work
 
+**2026-08-27, senare: engelsk policy och en rättad dörrbeskrivning.**
+
+- `integritet.html` finns nu på svenska och engelska, med samma språkväljare och
+  samma `buildapp-lang`-nyckel som katalogsidan, så valet följer med mellan sidorna.
+- **Dörrtexten för `/ai` var fel efter att den sajten ändrades.** Den lovade
+  "Bocka av det du gått igenom och rösta fram det bästa", men röstningen och
+  avbockningen togs bort ur `/ai` samma dag. Texten beskriver nu filtren och
+  listvyn i stället. Kontrollera dörrtexterna mot projekten när de ändras, de
+  ligger i ett annat repo och följer inte med automatiskt.
+
+
+
 **2026-08-27: integritetspolicy, ingen av sajterna hade informationsplikt.**
 
 - Ny `integritet.html` i katalogsidans gatu- och skyltdesign. Täcker Cloudflare,
