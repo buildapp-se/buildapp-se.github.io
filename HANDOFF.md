@@ -2,9 +2,9 @@
 schemaVersion: 1
 status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
-nextAction: Ta fram ett eget grafiskt paket per undersida, i första hand og:image för länkförhandsvisningar i Messenger, Facebook och Slack
+nextAction: Ta fram delningsbilder för de fristående projekten bakom dörrarna. Katalogsidans og:image är klar.
 blockers: []
-reviewedAt: 2026-08-09
+reviewedAt: 2026-08-27
 ---
 
 # Handoff: buildapp.se
@@ -14,9 +14,23 @@ reviewedAt: 2026-08-09
 Live på `https://buildapp.se/`. Sidan är en katalog som länkar vidare till de
 fristående småprojekten. Domänen är inte en produkt, den är huset.
 
-Designkoncept, tokens och regler för att lägga till en dörr står i `PROJECT.md`.
+Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.md`
+(det finns ingen `PROJECT.md`, den referensen var fel).
 
 ## Recent work
+
+**2026-08-27: länkförhandsvisningen saknades helt.**
+
+- `index.html` hade varken `og:`- eller `twitter:`-taggar, så delade länkar
+  renderades utan bild och utan titel bortom `<title>`.
+- Full uppsättning tillagd, plus `assets/og-image.png` (1200x630) i sajtens egen
+  stil: skyltfont, väggfärger, gatuband och de fyra dörrslugsen i sina accentfärger.
+- Bilden renderas från en HTML-mall via `npx playwright screenshot
+  --viewport-size=1200,630`. Mallen ligger inte i repot. Ska bilden göras om,
+  återskapa mallen från tokens i `CONTEXT.md`.
+- `og:image:width`, `height` och `type` är med. Utan dem hämtar skraparen bilden
+  och mäter den själv, vilket är varför en förhandsvisning ibland dyker upp först
+  vid andra delningen.
 
 - Katalogsidan byggd med arkitektonisk skyltning som koncept: varje undersida är en
   dörr i sin egen färg nerför en betongkorridor.
@@ -34,8 +48,8 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `PROJECT.
 
 ## Unresolved details
 
-- Inget eget grafiskt paket per undersida. Det saknas `og:image` för
-  länkförhandsvisningar, och undersidorna lånar `buildapp.se`:s touch-ikoner.
+- Undersidorna har fortfarande inget eget grafiskt paket: ingen egen `og:image`,
+  och de lånar `buildapp.se`:s touch-ikoner. Katalogsidan är klar sedan 2026-08-27.
 - Säkerhetsheaders saknas, eftersom GitHub Pages ignorerar `_headers`. Löses med en
   Transform Rule i Cloudflare tillsammans med de andra Pages-sajterna. Se
   säkerhetsrepot.
@@ -54,5 +68,8 @@ Rör den aldrig manuellt.
 
 ## Resume here
 
-Börja med `og:image` per undersida. Det är det som syns när någon delar en länk, och
-det är den enda kvarvarande punkten som påverkar hur projekten uppfattas utåt.
+Katalogsidans delningsbild är klar men **inte pushad**. Verifiera i produktion efter
+push, och kör Facebooks Sharing Debugger så cachen töms.
+
+Därefter `og:image` per undersida, samma metod. Det är det som syns när någon delar
+en länk in i ett enskilt projekt.

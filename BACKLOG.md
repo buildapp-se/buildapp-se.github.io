@@ -2,8 +2,11 @@
 
 ## Grafik
 
-- [ ] Eget `og:image` per undersida, för länkförhandsvisningar i Messenger,
-  Facebook, Slack och liknande.
+- [x] `og:image` för katalogsidan, `assets/og-image.png` (2026-08-27). Renderad från
+  en HTML-mall i sajtens egen stil med `npx playwright screenshot`, mallen ligger inte
+  i repot.
+- [ ] Eget `og:image` per undersida. Katalogsidan är klar, de fristående projekten
+  bakom dörrarna har fortfarande ingen egen delningsbild.
 - [ ] Eventuellt egna touch-ikoner per app, i stället för att låna `buildapp.se`:s.
 
 ## Säkerhet
