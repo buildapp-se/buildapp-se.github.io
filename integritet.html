@@ -114,8 +114,8 @@ main a:hover{border-color:var(--accent)}
 <main class="wrap">
 
 <div lang="sv" data-doc="sv">
-<h1>Integritetspolicy</h1>
-  <p class="meta">Senast uppdaterad 27 augusti 2026 &middot; Version 1.0</p>
+  <h1>Integritetspolicy</h1>
+  <p class="meta">Senast uppdaterad 27 augusti 2026 &middot; Version 1.1</p>
 
   <p class="lede">buildapp.se är en katalogsida som pekar vidare till fristående hobbyprojekt. Här finns inga annonser, ingen beteendespårning och ingen försäljning av personuppgifter. Den här sidan gäller själva katalogsidan. Varje projekt bakom en dörr har en egen policy, eftersom de behandlar olika mycket.</p>
 
@@ -126,21 +126,23 @@ main a:hover{border-color:var(--accent)}
   <p>Katalogsidan är statisk och har varken konton, formulär eller databas. Uppgifter uppstår ändå i den tekniska leveransen:</p>
   <ul>
     <li><strong>Cloudflare</strong> levererar och skyddar sajten. I det ledet behandlas IP-adress, tidpunkt, efterfrågad adress och webbläsarinformation.</li>
+    <li><strong>Cloudflare Web Analytics</strong> ger aggregerad besöksstatistik: vilken sida som visats, land, webbläsare, hänvisande sida och laddningstid. Cloudflare lägger in ett litet skript (<code>beacon.min.js</code> från <code>static.cloudflareinsights.com</code>) som skickar mätvärdena till buildapp.se. Tjänsten sätter inga cookies, skapar ingen enhetsprofil och sparar inte din IP-adress; den används bara i stunden för att avgöra land och sålla bort robotar.</li>
     <li><strong>GitHub Pages</strong> är webbhotellet och för motsvarande tekniska loggar.</li>
-    <li><strong>Google Fonts</strong> levererar sidans typsnitt. När din webbläsare hämtar dem går din IP-adress till Google. Det är den enda tredjeparten som får uppgifter direkt från din webbläsare.</li>
+    <li><strong>Google Fonts</strong> levererar sidans typsnitt. När din webbläsare hämtar dem går din IP-adress till Google. Utöver Cloudflare är det den enda tredjeparten som får uppgifter direkt från din webbläsare.</li>
   </ul>
   <p>Ingen profilering och inget automatiserat beslutsfattande med rättsliga eller liknande betydande effekter sker.</p>
 
   <h2>Varför och med vilken rättslig grund?</h2>
   <ul>
     <li><strong>Leverans, säkerhet och drift:</strong> berättigat intresse av att sidan fungerar, är nåbar och skyddad mot missbruk.</li>
+    <li><strong>Besöksstatistik:</strong> berättigat intresse av att veta vilka sidor som används och hur snabbt de laddar, så att arbetet kan läggas där det gör nytta. Statistiken är aggregerad och kan inte kopplas till dig.</li>
     <li><strong>Språkvalet:</strong> för att tillhandahålla den funktion du uttryckligen använder när du byter språk.</li>
     <li><strong>Support:</strong> för att besvara din begäran om du skriver till kontaktadressen.</li>
   </ul>
 
   <h2>Cookies och lagring på din enhet</h2>
-  <p>Katalogsidan sätter inga cookies och laddar ingen analystjänst. Den använder <code>localStorage</code> till exakt en sak: att komma ihåg om du valt svenska eller engelska, under nyckeln <code>buildapp-lang</code>. Den lagringen är nödvändig för en funktion du själv begär och kräver därför inget samtycke, vilket är anledningen till att det inte finns någon cookiebanner. Du tar bort den genom att rensa webbplatsdata för buildapp.se i webbläsaren.</p>
-  <p>Om icke nödvändig mätning eller annonsering införs senare uppdateras den här sidan, och samtycke hämtas in, innan tekniken aktiveras.</p>
+  <p>Katalogsidan sätter inga cookies. Besöksstatistiken från Cloudflare Web Analytics lagrar ingenting på din enhet och använder ingen identifierare som följer dig mellan besök. Sidan använder <code>localStorage</code> till exakt en sak: att komma ihåg om du valt svenska eller engelska, under nyckeln <code>buildapp-lang</code>. Den lagringen är nödvändig för en funktion du själv begär och kräver därför inget samtycke, vilket är anledningen till att det inte finns någon cookiebanner. Du tar bort den genom att rensa webbplatsdata för buildapp.se i webbläsaren.</p>
+  <p>Om mätning som kräver cookies eller enhetsidentifiering, eller annonsering, införs senare uppdateras den här sidan, och samtycke hämtas in, innan tekniken aktiveras.</p>
 
   <h2>Lagringstid</h2>
   <ul>
@@ -170,7 +172,7 @@ main a:hover{border-color:var(--accent)}
 
 <div lang="en" data-doc="en" hidden>
   <h1>Privacy policy</h1>
-  <p class="meta">Last updated 27 August 2026 &middot; Version 1.0</p>
+  <p class="meta">Last updated 27 August 2026 &middot; Version 1.1</p>
 
   <p class="lede">buildapp.se is a directory page that points on to standalone hobby projects. There is no advertising, no behavioural tracking and no sale of personal data. This page covers the directory page itself. Each project behind a door has its own policy, because they process different amounts of data.</p>
 
@@ -181,21 +183,23 @@ main a:hover{border-color:var(--accent)}
   <p>The directory page is static and has no accounts, forms or database. Data still arises in the technical delivery:</p>
   <ul>
     <li><strong>Cloudflare</strong> delivers and protects the site. In that step, IP address, time, requested address and browser information are processed.</li>
+    <li><strong>Cloudflare Web Analytics</strong> provides aggregated visit statistics: which page was viewed, country, browser, referring page and load time. Cloudflare injects a small script (<code>beacon.min.js</code> from <code>static.cloudflareinsights.com</code>) that sends the measurements to buildapp.se. The service sets no cookies, builds no device profile and does not store your IP address; it is used only momentarily to determine country and filter out bots.</li>
     <li><strong>GitHub Pages</strong> is the host and keeps equivalent technical logs.</li>
-    <li><strong>Google Fonts</strong> serves the page's typefaces. Your IP address goes to Google when your browser fetches them. It is the only third party that receives data directly from your browser.</li>
+    <li><strong>Google Fonts</strong> serves the page's typefaces. Your IP address goes to Google when your browser fetches them. Apart from Cloudflare, it is the only third party that receives data directly from your browser.</li>
   </ul>
   <p>No profiling or automated decision-making with legal or similarly significant effects takes place.</p>
 
   <h2>Purposes and legal bases</h2>
   <ul>
     <li><strong>Delivery, security and operation:</strong> our legitimate interest in the page working, being reachable and being protected against abuse.</li>
+    <li><strong>Visit statistics:</strong> our legitimate interest in knowing which pages are used and how fast they load, so that effort goes where it is useful. The statistics are aggregated and cannot be linked to you.</li>
     <li><strong>The language choice:</strong> to provide the feature you explicitly use when you switch language.</li>
     <li><strong>Support:</strong> to answer your request if you write to the contact address.</li>
   </ul>
 
   <h2>Cookies and storage on your device</h2>
-  <p>The directory page sets no cookies and loads no analytics service. It uses <code>localStorage</code> for exactly one thing: remembering whether you chose Swedish or English, under the key <code>buildapp-lang</code>. That storage is necessary for a feature you request yourself and therefore needs no consent, which is why there is no cookie banner. You can remove it by clearing site data for buildapp.se in your browser.</p>
-  <p>If non-essential measurement or advertising is introduced later, this page will be updated, and consent obtained, before that technology is enabled.</p>
+  <p>The directory page sets no cookies. The visit statistics from Cloudflare Web Analytics store nothing on your device and use no identifier that follows you between visits. The page uses <code>localStorage</code> for exactly one thing: remembering whether you chose Swedish or English, under the key <code>buildapp-lang</code>. That storage is necessary for a feature you request yourself and therefore needs no consent, which is why there is no cookie banner. You can remove it by clearing site data for buildapp.se in your browser.</p>
+  <p>If measurement that requires cookies or device identification, or advertising, is introduced later, this page will be updated, and consent obtained, before that technology is enabled.</p>
 
   <h2>Retention</h2>
   <ul>
