@@ -2,7 +2,7 @@
 schemaVersion: 1
 status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
-nextAction: Slå på Cloudflare Web Analytics på buildapp.se-zonen om besöksstatistik per sökväg önskas, och uppdatera då avsnittet Cookies i integritet.html innan beaconen aktiveras
+nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
 reviewedAt: 2026-08-27
 ---
@@ -18,6 +18,20 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
 (det finns ingen `PROJECT.md`, den referensen var fel).
 
 ## Recent work
+
+**2026-08-27, kväll: Cloudflare Web Analytics påslaget för hela zonen.**
+
+- Valet "Enable, JS snippet automatically injected" under Observe → Web
+  Analytics → Manage site. Cloudflare injicerar `beacon.min.js` i all proxyad
+  HTML under `buildapp.se`, alltså även `/sipdeck/`, `/grammat/`, `/ai/` och
+  `/tidslinje/`. Verifierat med curl mot roten. Ingen kodändring, inget att
+  underhålla. Beaconen rapporterar till `buildapp.se/cdn-cgi/rum`.
+- `integritet.html` (sv + en, version 1.1) beskriver tjänsten: cookiefri, ingen
+  enhetsidentifiering, berättigat intresse. Motsvarande text ligger i varje
+  projekts policy i respektive repo, ändrade samma kväll.
+- **Gräns:** bara sidvisningar, inga events. Adblockers stoppar beaconen, räkna
+  med 20–40 % underrapportering. Ingen CSP sätts i zonen idag; införs en måste
+  `static.cloudflareinsights.com` in i `script-src`.
 
 **2026-08-27, senare: engelsk policy och en rättad dörrbeskrivning.**
 
