@@ -4,7 +4,7 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-08-27
+reviewedAt: 2026-09-14
 ---
 
 # Handoff: buildapp.se
@@ -18,6 +18,10 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
 (det finns ingen `PROJECT.md`, den referensen var fel).
 
 ## Recent work
+
+**2026-09-14: Valheim Food Planner i policylistan.**
+
+- `integritet.html` version 1.2 länkar till `/valheim/privacy.html` (sv + en). Policyn ligger i repot `buildapp-se/valheim`. Valheim har ingen dörr på startsidan än, olistad med avsikt.
 
 **2026-08-27, kväll: Cloudflare Web Analytics påslaget för hela zonen.**
 
