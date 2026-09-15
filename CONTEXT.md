@@ -63,4 +63,4 @@ Ingen backend, inga hemligheter.
 Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; conventions in elwyn-dash `docs/security.md`.
 
 - Headers: 2026-08-04, fail, 0 of 6 on buildapp.se (GitHub Pages)
-- Search Console: 2026-09-15, warn, only / indexed, no sitemap submitted, subpages unknown to Google
+- Search Console: 2026-09-15, warn, only / indexed, sitemap submitted same day, pending
