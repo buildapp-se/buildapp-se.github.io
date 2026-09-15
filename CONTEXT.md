@@ -57,3 +57,10 @@ fyra appikoner.
 
 `git push` till `main`, GitHub Pages bygger automatiskt på ungefär trettio sekunder.
 Ingen backend, inga hemligheter.
+
+## Audits
+
+Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; conventions in elwyn-dash `docs/security.md`.
+
+- Headers: 2026-08-04, fail, 0 of 6 on buildapp.se (GitHub Pages)
+- Search Console: 2026-09-15, warn, only / indexed, no sitemap submitted, subpages unknown to Google
