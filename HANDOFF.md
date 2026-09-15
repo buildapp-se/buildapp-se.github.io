@@ -4,7 +4,7 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-09-14
+reviewedAt: 2026-09-15
 ---
 
 # Handoff: buildapp.se
@@ -18,6 +18,12 @@ Designkoncept, tokens och regler för att lägga till en dörr står i `CONTEXT.
 (det finns ingen `PROJECT.md`, den referensen var fel).
 
 ## Recent work
+
+**2026-09-15: Valheim Food Planner fick en dörr, och alla dörrar visar språk.**
+
+- Valheim var olistad bara medan den byggdes. Dörren ligger sist, ikonen är en kopia av appens V-märke i `assets/valheim-mark.svg`.
+- Språkchips per dörr, verifierade mot live-sajterna: Sipdeck och AI har språktoggel (SV, EN), Grammat och Tidslinjen är bara svenska, Valheim bara engelska.
+- Ember-accenten `#d8a13a` klarar inte kontrast som textfärg på ljus vägg, så taglinen använder `--tag`. Kontrollerat i Playwright vid 1280 och 390 px.
 
 **2026-09-14: Valheim Food Planner i policylistan.**
 

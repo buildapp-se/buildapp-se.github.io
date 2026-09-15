@@ -14,8 +14,9 @@ produkt, den är huset, och varje undersida är en dörr.
 - `favicon.svg` är självbärande och byter färg via `prefers-color-scheme` inbyggt i
   SVG:n. `assets/icon-32.png` är fallback för äldre webbläsare och `icon-192.png`
   är apple-touch-icon, eftersom iOS inte stödjer SVG-favicons.
-- `assets/ai-mark.png` är en självhostad kopia, eftersom AI-appen saknar egen ikon
-  på sin egen domän. Övriga appars ikoner refereras direkt via `buildapp.se`.
+- `assets/ai-mark.png` och `assets/valheim-mark.svg` är självhostade kopior, eftersom
+  AI-appen och Valheim saknar egen ikonfil på sin domän (Valheims ikon finns bara
+  som data-URI i dess HTML). Övriga appars ikoner refereras direkt via `buildapp.se`.
 
 ## Constraints
 
@@ -34,7 +35,8 @@ produkt, den är huset, och varje undersida är en dörr.
 - Loggan och faviconen använder endast `--ink` och `--wall`, aldrig en apps
   accentfärg, så att varumärket förblir neutralt.
 - Ingen build-time-i18n. Varje översatt textnod har `data-sv` och `data-en`.
-- Ordningen på dörrarna är nyast repo överst.
+- Ordningen på dörrarna är nyast repo överst, med undantag för Valheim Food Planner som ligger sist (Patriks val 2026-09-15).
+- Varje dörr visar vilka språk appen finns på som chips under sluggen (`.door-langs`, SV och/eller EN). Chipsen följer appen, inte katalogsidans språkval, så kontrollera dem när en app får eller tappar ett språk.
 
 ## Designtokens
 
@@ -47,7 +49,7 @@ CSS custom properties i `:root`, ljust och mörkt via `prefers-color-scheme`.
   skyltkänsla. **IBM Plex Sans** för brödtext. **IBM Plex Mono** för url-slugs och
   språktoggel.
 
-Varje `.door` sätter `--accent` inline med appens egen färg. `.knob` är en liten
+Varje `.door` sätter `--accent` inline med appens egen färg. En ljus accent som inte når 4,5:1 mot `--wall` sätter även `--tag` (accenten blandad med `--ink`) för taglinen, som Valheim. `.knob` är en liten
 accentprick i ikonrutans hörn, byggd på mönstret som redan fanns organiskt i tre av
 fyra appikoner.
 
