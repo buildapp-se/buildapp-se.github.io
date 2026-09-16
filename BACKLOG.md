@@ -22,3 +22,9 @@
 
 - [ ] Håll dörrarna i takt med projekten. En ny app betyder ett nytt `.door`-block
   med appens egen accentfärg och riktiga ikon, placerat enligt nyast-överst-regeln.
+
+## Granskning 2026-09-16
+
+Fynd från cockpitens granskningskolumner (Lighthouse mobil, W3C, UX-skript, headers, TLS, OWASP). Mätvärdena står under `## Audits` i CONTEXT.md.
+
+- [ ] `[P3]` Lighthouse: färgkontrast under 4,5:1 och en länk vars synliga text inte ingår i det tillgängliga namnet (a11y 96).

@@ -4,7 +4,7 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-09-15
+reviewedAt: 2026-09-16
 ---
 
 # Handoff: buildapp.se
@@ -136,3 +136,7 @@ push, och kör Facebooks Sharing Debugger så cachen töms.
 
 Undersidornas `og:image` behöver inget arbete, de har redan egna. Enda kvarvarande
 grafikpunkten är touch-ikoner per app, vilket är kosmetik.
+
+## Granskning 2026-09-16
+
+Cross-project audit run from elwyn-dash (session 5 in the daily note). Results written to `## Audits` in CONTEXT.md, findings appended to BACKLOG.md under `## Granskning 2026-09-16`. Headers on buildapp.se and the TLS grade are zone-level and are fixed once in Cloudflare, not here.

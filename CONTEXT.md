@@ -62,5 +62,8 @@ Ingen backend, inga hemligheter.
 
 Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; conventions in elwyn-dash `docs/security.md`.
 
-- Headers: 2026-08-04, fail, 0 of 6 on buildapp.se (GitHub Pages)
-- Search Console: 2026-09-15, warn, only / indexed, sitemap submitted same day, pending
+- Headers: 2026-09-16, fail, 0 of 6 on buildapp.se (GitHub Pages), one hostname-scoped Transform Rule on the zone fixes every buildapp.se path
+- Search Console: 2026-09-16, warn, sitemap with 9 URLs accepted, 0 errors, only / known indexed, per-URL inspection not read
+- TLS: 2026-09-16, warn, SSL Labs B on buildapp.se, TLS 1.0 and 1.1 still enabled on the zone, no HSTS
+- Lighthouse: 2026-09-16, warn, a11y 96 (colour contrast, label-content mismatch), best practices 100, SEO 100 (mobile, no perf)
+- Markup: 2026-09-16, pass, W3C 0 errors on / and om.html, 0 broken links (LinkedIn answers 999 to scripts)
