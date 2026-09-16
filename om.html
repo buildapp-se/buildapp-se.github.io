@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om oss | buildapp.se</title>
+<meta name="description" content="Om buildapp.se: vem som bygger projekten och hur du hittar mer.">
+<link rel="canonical" href="https://buildapp.se/om.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="buildapp.se">
+<meta property="og:title" content="Om oss | buildapp.se">
+<meta property="og:description" content="Om buildapp.se: vem som bygger projekten och hur du hittar mer.">
+<meta property="og:url" content="https://buildapp.se/om.html">
+<meta property="og:image" content="https://buildapp.se/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Om oss | buildapp.se">
+<meta name="twitter:description" content="Om buildapp.se: vem som bygger projekten och hur du hittar mer.">
+<meta name="twitter:image" content="https://buildapp.se/assets/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#DFDDD5; --wall-2:#D2CFC5; --surface:#EAE8E0;
+  --ink:#211F1A; --ink-2:#6E6A5D; --line:rgba(33,31,26,.14);
+  --accent:#9E2B3E;
+  --font-display:'Big Shoulders Display',sans-serif;
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --wall:#18181A; --wall-2:#222224; --surface:#201F1F;
+    --ink:#EDEAE2; --ink-2:#9C978A; --line:rgba(237,234,226,.14);
+    --accent:#C9576A;
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--wall);color:var(--ink);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.wrap{max-width:760px;margin:0 auto;padding-left:clamp(1.25rem,4vw,3rem);padding-right:clamp(1.25rem,4vw,3rem)}
+
+/* Skylten är samma som på katalogsidan, så man vet att man är kvar i huset. */
+.street-sign{background:var(--wall-2);border-bottom:1px solid var(--line)}
+.sign-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:clamp(1.5rem,4vw,2.5rem);padding-bottom:clamp(1.5rem,4vw,2.5rem)}
+.brand{display:flex;align-items:center;gap:.7em;text-decoration:none}
+.brand-icon{flex-shrink:0;width:clamp(34px,6vw,42px);height:clamp(34px,6vw,42px)}
+.wordmark{font-family:var(--font-display);font-weight:900;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.01em;text-transform:uppercase}
+.wordmark .dot{opacity:.5}
+.eyebrow{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:.35em}
+.sign-right{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+.lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:100px;overflow:hidden;flex-shrink:0}
+.lang-toggle button{background:transparent;border:0;cursor:pointer;padding:.4em .9em;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2)}
+.lang-toggle button.active{background:var(--ink);color:var(--wall-2)}
+.back{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;border-bottom:1px solid transparent;text-decoration:none}
+.back:hover{border-color:var(--accent);color:var(--accent)}
+
+main{padding-top:clamp(2rem,6vw,3.5rem);padding-bottom:clamp(3rem,8vw,5rem)}
+h1{font-family:var(--font-display);font-weight:900;font-size:clamp(2rem,6vw,3rem);text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+.meta{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-top:.9rem}
+h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.2rem,3.4vw,1.6rem);text-transform:uppercase;line-height:1.1;
+   margin-top:2.75rem;padding-top:1rem;border-top:1px solid var(--line)}
+h3{font-size:.95rem;font-weight:600;margin-top:1.5rem;color:var(--ink)}
+p{margin-top:.85rem;color:var(--ink-2);font-size:.95rem}
+p.lede{color:var(--ink);font-size:1.05rem;margin-top:1.25rem}
+ul{margin-top:.85rem;list-style:none}
+li{position:relative;padding:.5rem 0 .5rem 1.4rem;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.95rem}
+li::before{content:'/';position:absolute;left:0;font-family:var(--font-mono);color:var(--accent)}
+strong{color:var(--ink);font-weight:600}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--surface);padding:.1em .35em;border:1px solid var(--line)}
+main a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}
+main a:hover{border-color:var(--accent)}
+
+.street-foot{padding-top:1.5rem;padding-bottom:3rem;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);text-align:center;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header class="street-sign">
+  <div class="wrap sign-row">
+    <a class="brand" href="/">
+      <svg class="brand-icon" viewBox="0 0 52 52" aria-hidden="true">
+        <rect x="1" y="1" width="50" height="50" rx="10" fill="var(--ink)"/>
+        <polygon points="26,11 40,24 12,24" fill="var(--wall)"/>
+        <rect x="15" y="24" width="22" height="16" fill="var(--wall)"/>
+        <rect x="22" y="30" width="8" height="10" fill="var(--ink)"/>
+      </svg>
+      <div>
+        <span class="wordmark">buildapp<span class="dot">.</span>se</span>
+        <span class="eyebrow" data-sv="en samling småprojekt" data-en="a small collection of projects">en samling småprojekt</span>
+      </div>
+    </a>
+    <div class="sign-right">
+      <div class="lang-toggle" role="group" aria-label="Språk / Language">
+        <button type="button" data-lang="sv">SV</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="back" href="/" data-sv="&larr; Tillbaka" data-en="&larr; Back">&larr; Tillbaka</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div lang="sv" data-doc="sv">
+  <h1>Om oss</h1>
+  <p class="lede">Bakom buildapp.se står Patrik Löfgren. Projekten här byggs ett i taget, på kvällar och helger, och öppnas när de är bra nog att användas på riktigt. Till vardags jobbar jag med organisationsutveckling och utbildning.</p>
+  <h2>Hitta mer</h2>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/patrik-l%C3%B6fgren/" rel="external noopener" target="_blank">LinkedIn</a></li>
+    <li><a href="https://orgutveckling.se" rel="external noopener" target="_blank">orgutveckling.se</a></li>
+  </ul>
+</div>
+
+<div lang="en" data-doc="en" hidden>
+  <h1>About us</h1>
+  <p class="lede">buildapp.se is built by Patrik Löfgren. The projects here are made one at a time, on evenings and weekends, and open once they are good enough to actually use. By day I work with organisational development and training.</p>
+  <h2>Find out more</h2>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/patrik-l%C3%B6fgren/" rel="external noopener" target="_blank">LinkedIn</a></li>
+    <li><a href="https://orgutveckling.se" rel="external noopener" target="_blank">orgutveckling.se</a></li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="street-foot">
+  <div class="wrap">buildapp.se &middot; <a href="/" data-sv="Tillbaka till dörrarna" data-en="Back to the doors">Tillbaka till dörrarna</a></div>
+</footer>
+
+<script>
+(function(){
+  // Samma nyckel som katalogsidan, sa sprakvalet foljer med hit.
+  var KEY = 'buildapp-lang';
+  var buttons = document.querySelectorAll('.lang-toggle button');
+
+  function apply(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-doc]').forEach(function(el){
+      el.hidden = el.getAttribute('data-doc') !== lang;
+    });
+    document.querySelectorAll('[data-sv]').forEach(function(el){
+      el.textContent = lang === 'sv' ? el.getAttribute('data-sv') : el.getAttribute('data-en');
+    });
+    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+  }
+
+  var saved;
+  try { saved = localStorage.getItem(KEY); } catch (e) { saved = null; }
+  var guess = (navigator.language || 'sv').toLowerCase().indexOf('sv') === 0 ? 'sv' : 'en';
+  apply(saved || guess);
+
+  document.querySelector('.lang-toggle').addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-lang]');
+    if(!btn) return;
+    try { localStorage.setItem(KEY, btn.dataset.lang); } catch (e) {}
+    apply(btn.dataset.lang);
+  });
+})();
+</script>
+
+</body>
+</html>
