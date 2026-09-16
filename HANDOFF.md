@@ -9,6 +9,13 @@ reviewedAt: 2026-09-16
 
 # Handoff: buildapp.se
 
+## 2026-09-16: Lighthouse-kontrasten
+
+Sekundärfärgen `--ink-2` mörkare i ljust läge (index, om, integritet), AI-dörrens
+accent `#35606F` (den enda av fem under 4,5:1), loggans `aria-label` borta så att
+den synliga texten är namnet. `ba39ea6` och `fdbd92e`, Pages-deployade, mätt
+live: Lighthouse a11y 100.
+
 ## Läget
 
 Live på `https://buildapp.se/`. Sidan är en katalog som länkar vidare till de
