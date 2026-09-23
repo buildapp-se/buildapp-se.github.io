@@ -4,10 +4,13 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-09-16
+reviewedAt: 2026-09-23
 ---
 
 # Handoff: buildapp.se
+
+## 2026-09-23: Flaskors dörr
+Överst (nyast), accent `#85444F`, ikon `buildapp.se/flaskor/pwa-512x512.png`, chip SV, plus `/flaskor/` i `sitemap.xml` (`27d4dc5`). Verifierat lokalt (sex dörrar, bilden laddar, sv/en, ingen sidscroll) och live. **Fälla:** `git push` hänger här, remote-URL:en bär `Elwyndaz@` och Git Credential Manager väntar på en osynlig ruta. Fungerar: `git -c credential.helper= -c credential.helper='!gh auth git-credential' push https://github.com/buildapp-se/buildapp-se.github.io.git main`. **Öppet:** i mörkt läge har taglinen i accentfärg cirka 2,5:1 mot `--wall` för Grammat och Flaskor, `--tag` finns bara för ljust läge.
 
 ## 2026-09-16: Lighthouse-kontrasten
 
