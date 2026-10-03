@@ -71,6 +71,13 @@ a{color:inherit;text-decoration:none}
 .door-icon img{width:100%;height:100%;object-fit:cover}
 .knob{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);right:-3px;bottom:-3px;box-shadow:0 0 0 3px var(--surface)}
 
+.wip .door-icon{background:var(--wall-2)}
+.wip-notice{position:relative;display:flex;align-items:center;justify-content:center;width:86%;height:84%;padding:2px 1px;background:var(--surface);color:var(--ink);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);font-family:var(--font-display);font-size:clamp(12px,1.7vw,15px);font-weight:700;line-height:.96;text-align:center;text-transform:uppercase;white-space:pre-line}
+.wip-notice::before,.wip-notice::after{content:"";position:absolute;top:2px;width:3px;height:3px;background:var(--ink);border-radius:50%}
+.wip-notice::before{left:4px}
+.wip-notice::after{right:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
 .door-body{min-width:0}
 .door-title{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:-.005em;text-transform:uppercase;line-height:1.05}
 .door-tag{display:block;font-size:.85rem;font-weight:600;color:var(--tag,var(--accent));margin-top:.3em}
@@ -122,6 +129,38 @@ a{color:inherit;text-decoration:none}
 
 <main class="street">
 
+  <a class="door wip" style="--accent:#f2a03d;--tag:color-mix(in srgb,#f2a03d 45%,var(--ink))" href="https://buildapp.se/dinodeck/">
+    <span class="wrap door-row">
+      <span class="door-icon"><span class="wip-notice" aria-hidden="true" data-sv="UNDER&#10;ARBETE" data-en="WORK&#10;IN&#10;PROGRESS">UNDER
+ARBETE</span><span class="knob" aria-hidden="true"></span></span>
+      <span class="door-body">
+        <span class="door-title">Dinodeck</span>
+        <span class="sr-only" data-sv="Under arbete." data-en="Work in progress.">Under arbete.</span>
+        <span class="door-tag" data-sv="Dinosauriekort för barn." data-en="Dinosaur cards for kids.">Dinosauriekort för barn.</span>
+        <span class="door-desc"
+          data-sv="Svep dig igenom 30 dinosaurier och andra urtidsdjur. Åtta kort är öppna från start, resten vinner du i utmaningar. Gratis, inget konto."
+          data-en="Swipe through 30 dinosaurs and other prehistoric animals. Eight cards are open from the start, the rest you win in challenges. Free, no account.">Svep dig igenom 30 dinosaurier och andra urtidsdjur. Åtta kort är öppna från start, resten vinner du i utmaningar. Gratis, inget konto.</span>
+      </span>
+      <span class="door-meta"><span class="door-slug">/dinodeck</span><span class="door-langs"><span>SV</span><span>EN</span></span></span>
+    </span>
+  </a>
+
+  <a class="door wip" style="--accent:#137738;--tag:color-mix(in srgb,#137738 45%,var(--ink))" href="https://buildapp.se/bulk/">
+    <span class="wrap door-row">
+      <span class="door-icon"><span class="wip-notice" aria-hidden="true" data-sv="UNDER&#10;ARBETE" data-en="WORK&#10;IN&#10;PROGRESS">UNDER
+ARBETE</span><span class="knob" aria-hidden="true"></span></span>
+      <span class="door-body">
+        <span class="door-title">Bulk</span>
+        <span class="sr-only" data-sv="Under arbete." data-en="Work in progress.">Under arbete.</span>
+        <span class="door-tag" data-sv="Mealprep i bulk, ny smak per låda." data-en="Meal prep in bulk, a new flavor per box.">Mealprep i bulk, ny smak per låda.</span>
+        <span class="door-desc"
+          data-sv="Laga neutrala baser i bulk och byt smak per låda med ett smakkit. Räknar näring, inköpslista och tillagningsschema. Gratis, ingen inloggning."
+          data-en="Cook neutral bases in bulk and change the flavor per box with a flavor kit. Works out nutrition, a shopping list and a cooking schedule. Free, no login. Swedish only.">Laga neutrala baser i bulk och byt smak per låda med ett smakkit. Räknar näring, inköpslista och tillagningsschema. Gratis, ingen inloggning.</span>
+      </span>
+      <span class="door-meta"><span class="door-slug">/bulk</span><span class="door-langs"><span>SV</span></span></span>
+    </span>
+  </a>
+
   <a class="door" style="--accent:#85444F" href="https://buildapp.se/flaskor/">
     <span class="wrap door-row">
       <span class="door-icon"><img src="https://buildapp.se/flaskor/pwa-512x512.png" alt="" width="72" height="72" loading="lazy"><span class="knob" aria-hidden="true"></span></span>
@@ -133,6 +172,22 @@ a{color:inherit;text-decoration:none}
           data-en="Add bottles by Systembolaget article number and get price, drinking window and Vivino rating. Try it without an account, or sign in and share the cellar with the people you live with. Swedish only.">Lägg in flaskor med Systembolagets artikelnummer och få pris, drickfönster och Vivino-betyg. Prova utan konto, eller logga in och dela källaren med de du bor med.</span>
       </span>
       <span class="door-meta"><span class="door-slug">/flaskor</span><span class="door-langs"><span>SV</span></span></span>
+    </span>
+  </a>
+
+  <a class="door wip" style="--accent:#b8202f" href="https://buildapp.se/beefcake/">
+    <span class="wrap door-row">
+      <span class="door-icon"><span class="wip-notice" aria-hidden="true" data-sv="UNDER&#10;ARBETE" data-en="WORK&#10;IN&#10;PROGRESS">UNDER
+ARBETE</span><span class="knob" aria-hidden="true"></span></span>
+      <span class="door-body">
+        <span class="door-title">Beefcake</span>
+        <span class="sr-only" data-sv="Under arbete." data-en="Work in progress.">Under arbete.</span>
+        <span class="door-tag" data-sv="Träningslogg för styrketräning." data-en="A training log for strength training.">Träningslogg för styrketräning.</span>
+        <span class="door-desc"
+          data-sv="Välj dagens pass, se vad du lyfte förra gången, justera vikterna och spara. Kräver inloggning."
+          data-en="Pick today's workout, see what you lifted last time, adjust the weights and save. Requires login. Swedish only.">Välj dagens pass, se vad du lyfte förra gången, justera vikterna och spara. Kräver inloggning.</span>
+      </span>
+      <span class="door-meta"><span class="door-slug">/beefcake</span><span class="door-langs"><span>SV</span></span></span>
     </span>
   </a>
 
