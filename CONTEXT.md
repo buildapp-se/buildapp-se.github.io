@@ -32,6 +32,7 @@ produkt, den är huset, och varje undersida är en dörr.
   mjukvarustartup.
 - Varje dörr använder appens **egen** accentfärg och **riktiga** ikon, aldrig en ny
   illustration och aldrig en skärmdump.
+- Undantag: en dörr till ett projekt under arbete har klassen `wip` och visar skylten `.wip-notice` ("Under arbete" / "Work in progress") i ikonrutan i stället för ikonen, även när appen har en ikon (Patrik 2026-10-03: Dinodeck, Bulk, Beefcake). Statusen läses upp en gång via `.sr-only` i `.door-body`; skyltens text är `aria-hidden`. Radbrytningarna ligger som `&#10;` i `data-sv`/`data-en`, ett ord per rad, annars ryms inte engelskan i 52 px. När projektet är klart: ta bort `wip`, skylten och `.sr-only`-raden och sätt in den riktiga ikonen.
 - Loggan och faviconen använder endast `--ink` och `--wall`, aldrig en apps
   accentfärg, så att varumärket förblir neutralt.
 - Ingen build-time-i18n. Varje översatt textnod har `data-sv` och `data-en`.

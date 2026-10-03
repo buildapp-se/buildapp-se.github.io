@@ -4,10 +4,14 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-09-24
+reviewedAt: 2026-10-03
 ---
 
 # Handoff: buildapp.se
+
+## 2026-10-03: tre dörrar under arbete
+
+Dinodeck (överst), Bulk (tvåa) och Beefcake (efter Flaskor) har dörrar med skylten "Under arbete" i stället för ikon (`2cd2345`), regeln står i `CONTEXT.md`. Accenter ur respektive app: Dinodeck `#f2a03d`, Bulk `#137738` (appens `--deal` i sRGB), båda med `--tag` eftersom de inte når 4,5:1 mot `--wall`, Beefcake `#b8202f` (appens `--accent-strong`). Verifierat live på 360 px, engelska, ljust läge: nio dörrar, ingen sidscroll, skylttexten 12 px utan klippning, taglines 4,59 till 7,80:1. Mörkt läge är bara sett på provsidan, inte live. **Öppet:** `sitemap.xml` saknar `/dinodeck/` och `/bulk/` (Beefcake är `noindex` med avsikt), och meta-beskrivningen räknar inte upp de nya projekten och inte heller Flaskor. Provsidan `wip-skyltar.html` (Codex, tre rundor, även bannervarianterna D1 till D3 för skylt över en ikon) ligger ocommittad i repot och ska inte committas: den skulle publiceras.
 
 ## 2026-09-24: tryckytor (UX-audit från aifabriken)
 
