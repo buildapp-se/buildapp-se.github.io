@@ -63,7 +63,8 @@ a{color:inherit;text-decoration:none}
 
 .street{display:flex;flex-direction:column}
 
-.door{display:block;border-bottom:1px solid var(--line);transition:background-color .18s ease}
+.door{--tag:color-mix(in srgb,var(--accent) 80%,var(--ink));display:block;border-bottom:1px solid var(--line);transition:background-color .18s ease}
+@media (prefers-color-scheme: dark){.door{--tag:color-mix(in srgb,var(--accent) 60%,var(--ink))}}
 .door:hover,.door:focus-visible{background:color-mix(in srgb, var(--accent) 8%, transparent)}
 .door-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,3vw,1.75rem);padding-top:clamp(1.25rem,3vw,2rem);padding-bottom:clamp(1.25rem,3vw,2rem)}
 .door-icon{position:relative;width:clamp(52px,8vw,72px);height:clamp(52px,8vw,72px);border-radius:22%;overflow:hidden;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .18s ease}
@@ -80,14 +81,14 @@ a{color:inherit;text-decoration:none}
 
 .door-body{min-width:0}
 .door-title{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:-.005em;text-transform:uppercase;line-height:1.05}
-.door-tag{display:block;font-size:.85rem;font-weight:600;color:var(--tag,var(--accent));margin-top:.3em}
+.door-tag{display:block;font-size:.85rem;font-weight:600;color:var(--tag);margin-top:.3em}
 .door-desc{display:block;font-size:.9rem;color:var(--ink-2);margin-top:.5em;max-width:52ch}
 
 .door-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
 .door-langs{display:flex;gap:.3rem}
 .door-langs span{font-family:var(--font-mono);font-size:.62rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2);border:1px solid var(--line);border-radius:100px;padding:.05em .55em}
 .door-slug{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;border-bottom:1px solid transparent;transition:border-color .18s ease}
-.door:hover .door-slug,.door:focus-visible .door-slug{border-color:var(--accent);color:var(--accent)}
+.door:hover .door-slug,.door:focus-visible .door-slug{border-color:var(--accent);color:var(--tag)}
 
 .street-foot{padding-top:1.5rem;padding-bottom:3rem;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);text-align:center}
 .foot-sep{margin:0 .5em;opacity:.5}
@@ -129,7 +130,7 @@ a{color:inherit;text-decoration:none}
 
 <main class="street">
 
-  <a class="door wip" style="--accent:#f2a03d;--tag:color-mix(in srgb,#f2a03d 45%,var(--ink))" href="https://buildapp.se/dinodeck/">
+  <a class="door wip" style="--accent:#f2a03d;--tag:color-mix(in srgb,#f2a03d 40%,var(--ink))" href="https://buildapp.se/dinodeck/">
     <span class="wrap door-row">
       <span class="door-icon"><img src="https://buildapp.se/dinodeck/icons/icon-512.png" alt="" width="72" height="72" loading="lazy"><span class="wip-banner" aria-hidden="true" data-sv="Under&#10;arbete" data-en="Work in&#10;progress">Under
 arbete</span></span>
@@ -247,7 +248,7 @@ arbete</span></span>
     </span>
   </a>
 
-  <a class="door" style="--accent:#d8a13a;--tag:color-mix(in srgb,#d8a13a 45%,var(--ink))" href="https://buildapp.se/valheim/">
+  <a class="door" style="--accent:#d8a13a;--tag:color-mix(in srgb,#d8a13a 40%,var(--ink))" href="https://buildapp.se/valheim/">
     <span class="wrap door-row">
       <span class="door-icon"><img src="./assets/valheim-mark.svg" alt="" width="72" height="72" loading="lazy"></span>
       <span class="door-body">
