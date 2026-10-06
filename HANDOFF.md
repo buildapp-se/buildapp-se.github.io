@@ -9,6 +9,10 @@ reviewedAt: 2026-10-03
 
 # Handoff: buildapp.se
 
+## 2026-10-06: banner över riktiga ikoner
+
+De tre dörrarna under arbete visar nu appens egen ikon med bannern "Under arbete" lutad över (`ec7f236`), i stället för helskylten nedan. Ikonerna länkas direkt: `dinodeck/icons/icon-512.png`, `bulk/icon-512.png`, `beefcake/icons/icon-512.png`. Verifierat live: 360 px mörkt engelska och 1100 px ljust svenska, nio dörrar, ingen sidscroll, bannertext 12 px utan klippning, 9 px luft till titeln. **Känt:** bannern täcker mitten av motivet, och på 52 px mobil syns nästan bara ikonens kanter. Bulks och Beefcakes mörka ikoner smälter dessutom in i sidan i mörkt läge.
+
 ## 2026-10-03: tre dörrar under arbete
 
 Dinodeck (överst), Bulk (tvåa) och Beefcake (efter Flaskor) har dörrar med skylten "Under arbete" i stället för ikon (`2cd2345`), regeln står i `CONTEXT.md`. Accenter ur respektive app: Dinodeck `#f2a03d`, Bulk `#137738` (appens `--deal` i sRGB), båda med `--tag` eftersom de inte når 4,5:1 mot `--wall`, Beefcake `#b8202f` (appens `--accent-strong`). Verifierat live på 360 px, engelska, ljust läge: nio dörrar, ingen sidscroll, skylttexten 12 px utan klippning, taglines 4,59 till 7,80:1. Mörkt läge är bara sett på provsidan, inte live. `/dinodeck/` och `/bulk/` ligger i `sitemap.xml` (Beefcake är `noindex` med avsikt och står inte där). **Öppet:** meta-beskrivningen räknar inte upp de nya projekten och inte heller Flaskor. Provsidan `wip-skyltar.html` (Codex, tre rundor, även bannervarianterna D1 till D3 för skylt över en ikon) ligger ocommittad i repot och ska inte committas: den skulle publiceras.
