@@ -70,3 +70,9 @@ Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; con
 - Actions: 2026-09-24, n/a, no GitHub Actions workflows
 - WCAG 2.2 AA: 2026-09-24, warn, axe 4.13.0 0 violations on buildapp.se (mobile, one page); manual keyboard pass not done
 - UX: 2026-09-24, warn, 6 of 6 script checks pass on buildapp.se (no --interact), live after the tap-target fix dc20146 (was fail: footer link 16 px); screenshot review not done
+- Headers (automated): 2026-10-06, fail, 1 targets; 1 failed, 0 blocked; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a/buildapp-se.github.io.json
+- npm audit (automated): 2026-10-06, n/a, No package.json in repository; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a/buildapp-se.github.io.json
+- Secrets (automated): 2026-10-06, pass, 2 targets; 0 failed, 0 blocked; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a/buildapp-se.github.io.json
+- Actions (automated): 2026-10-06, n/a, no GitHub Actions workflows; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a/buildapp-se.github.io.json
+- Markup (automated): 2026-10-06, pass, 1 targets; 0 failed, 0 blocked; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a2/buildapp-se.github.io.json
+- WCAG 2.2 AA (automated): 2026-10-06, blocked, 1 targets; 0 failed, 1 blocked; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a2/buildapp-se.github.io.json

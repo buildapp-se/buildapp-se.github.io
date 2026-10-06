@@ -28,3 +28,9 @@
 Fynd från cockpitens granskningskolumner (Lighthouse mobil, W3C, UX-skript, headers, TLS, OWASP). Mätvärdena står under `## Audits` i CONTEXT.md.
 
 - [x] `[P3]` (rättad 2026-09-16: `--ink-2` #6E6A5D till #56534A i ljust läge på tre sidor, AI-dörrens accent #35606F, loggans aria-label borta; a11y 100 live) Lighthouse: färgkontrast under 4,5:1 och en länk vars synliga text inte ingår i det tillgängliga namnet (a11y 96).
+
+## Granskning 2026-10-06
+
+Fynd från den automatiska sviten (aifabriken `tools/audit-suite.ts`: headers, npm audit, secrets, Actions, markup, axe). Mätvärdena står som `(automated)`-rader under `## Audits` i CONTEXT.md.
+
+- [ ] `[P3]` WCAG: axe hittar 0 fel men kan inte avgöra kontrasten på 5 element. Manuell kontrastkontroll återstår.
