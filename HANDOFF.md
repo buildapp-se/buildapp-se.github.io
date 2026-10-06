@@ -11,7 +11,7 @@ reviewedAt: 2026-10-03
 
 ## 2026-10-06: banner över riktiga ikoner
 
-De tre dörrarna under arbete visar nu appens egen ikon med bannern "Under arbete" lutad över (`ec7f236`), i stället för helskylten nedan. Ikonerna länkas direkt: `dinodeck/icons/icon-512.png`, `bulk/icon-512.png`, `beefcake/icons/icon-512.png`. Verifierat live: 360 px mörkt engelska och 1100 px ljust svenska, nio dörrar, ingen sidscroll, bannertext 12 px utan klippning, 9 px luft till titeln. **Känt:** bannern täcker mitten av motivet, och på 52 px mobil syns nästan bara ikonens kanter. Bulks och Beefcakes mörka ikoner smälter dessutom in i sidan i mörkt läge.
+De tre dörrarna under arbete visar nu appens egen ikon med bannern "Under arbete" lutad över (`ec7f236`), i stället för helskylten nedan. Ikonerna länkas direkt: `dinodeck/icons/icon-512.png`, `bulk/icon-512.png`, `beefcake/icons/icon-512.png`. Verifierat live: 360 px mörkt engelska och 1100 px ljust svenska, nio dörrar, ingen sidscroll, bannertext 12 px utan klippning, 9 px luft till titeln. Bannern låg först mitt på ikonen och dolde motivet; flyttad till ikonens nederkant samma dag (`top:86%`, `8d84867`), så de övre 59 % av ikonen är fria (mätt live på 1100 px ljust, mobil inte ommätt). Knoppen (`.knob`) hamnar bakom bannern på de här dörrarna. **Känt:** Bulks och Beefcakes mörka ikoner smälter in i sidan i mörkt läge.
 
 ## 2026-10-03: tre dörrar under arbete
 

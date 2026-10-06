@@ -32,7 +32,7 @@ produkt, den är huset, och varje undersida är en dörr.
   mjukvarustartup.
 - Varje dörr använder appens **egen** accentfärg och **riktiga** ikon, aldrig en ny
   illustration och aldrig en skärmdump.
-- En dörr till ett projekt under arbete har klassen `wip` och bannern `.wip-banner` ("Under arbete" / "Work in progress") lutad tvärs över appens riktiga ikon (Patrik 2026-10-06: Dinodeck, Bulk, Beefcake; helskylten utan ikon från 2026-10-03 är ersatt). Bannern är bredare än ikonrutan, så `.wip` släpper rutans klippning, flyttar rundningen till bilden och skjuter ikon och titel åt höger (28 px på dator, 32 px på mobil): dörrar under arbete står med avsikt inte i linje med de färdiga. Statusen läses upp en gång via `.sr-only` i `.door-body`; bannerns text är `aria-hidden`. När projektet är klart: ta bort `wip`, bannern och `.sr-only`-raden.
+- En dörr till ett projekt under arbete har klassen `wip` och bannern `.wip-banner` ("Under arbete" / "Work in progress") lutad över nederkanten av appens riktiga ikon, så att motivet syns ovanför (Patrik 2026-10-06: Dinodeck, Bulk, Beefcake; helskylten utan ikon från 2026-10-03 är ersatt). Bannern är bredare än ikonrutan, så `.wip` släpper rutans klippning, flyttar rundningen till bilden och skjuter ikon och titel åt höger (28 px på dator, 32 px på mobil): dörrar under arbete står med avsikt inte i linje med de färdiga. Statusen läses upp en gång via `.sr-only` i `.door-body`; bannerns text är `aria-hidden`. När projektet är klart: ta bort `wip`, bannern och `.sr-only`-raden.
 - Loggan och faviconen använder endast `--ink` och `--wall`, aldrig en apps
   accentfärg, så att varumärket förblir neutralt.
 - Ingen build-time-i18n. Varje översatt textnod har `data-sv` och `data-en`.
