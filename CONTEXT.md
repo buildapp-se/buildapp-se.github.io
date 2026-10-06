@@ -50,9 +50,7 @@ CSS custom properties i `:root`, ljust och mörkt via `prefers-color-scheme`.
   skyltkänsla. **IBM Plex Sans** för brödtext. **IBM Plex Mono** för url-slugs och
   språktoggel.
 
-Varje `.door` sätter `--accent` inline med appens egen färg. En ljus accent som inte når 4,5:1 mot `--wall` sätter även `--tag` (accenten blandad med `--ink`) för taglinen, som Valheim. `.knob` är en liten
-accentprick i ikonrutans hörn, byggd på mönstret som redan fanns organiskt i tre av
-fyra appikoner.
+Varje `.door` sätter `--accent` inline med appens egen färg. En ljus accent som inte når 4,5:1 mot `--wall` sätter även `--tag` (accenten blandad med `--ink`) för taglinen, som Valheim. Accenten syns i taglinen och vid hovring, och går igen i appens egen ikon. Accentpricken `.knob` i ikonrutans hörn är borttagen (Patrik 2026-10-06): rutans klippning dolde den på alla dörrar utom de under arbete.
 
 ## Environments and operations
 
