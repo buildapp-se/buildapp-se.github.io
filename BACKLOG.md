@@ -33,4 +33,4 @@ Fynd från cockpitens granskningskolumner (Lighthouse mobil, W3C, UX-skript, hea
 
 Fynd från den automatiska sviten (aifabriken `tools/audit-suite.ts`: headers, npm audit, secrets, Actions, markup, axe). Mätvärdena står som `(automated)`-rader under `## Audits` i CONTEXT.md.
 
-- [ ] `[P3]` WCAG: axe hittar 0 fel men kan inte avgöra kontrasten på 5 element. Manuell kontrastkontroll återstår.
+- [x] `[P3]` (rättad 2026-10-06, `73b8de2` på grenen `batch/2026-10-06`, inte live förrän den är mergad) WCAG: axe hittar 0 fel men kan inte avgöra kontrasten på 5 element. Kontrollen gjord i Chrome på alla tre sidorna, ljust och mörkt, vila och hovring: 49 av 408 textmätningar låg under 4,5:1, alla 408 klarar gränsen efter rättningen. Detaljer i `HANDOFF.md`.

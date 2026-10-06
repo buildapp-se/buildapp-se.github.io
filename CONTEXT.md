@@ -45,12 +45,12 @@ CSS custom properties i `:root`, ljust och mörkt via `prefers-color-scheme`.
 
 - `--wall`, `--wall-2`, `--surface`: betong och kalksten. Ljust `#DFDDD5`,
   `#D2CFC5`, `#EAE8E0`. Mörkt `#18181A`, `#222224`, `#201F1F`.
-- `--ink`, `--ink-2`: text. Ljust `#211F1A` och `#6E6A5D`. Mörkt `#EDEAE2` och `#9C978A`.
+- `--ink`, `--ink-2`: text. Ljust `#211F1A` och `#56534A`. Mörkt `#EDEAE2` och `#9C978A`.
 - Typsnitt: **Big Shoulders Display** för rubriker och wordmark, kondenserad
   skyltkänsla. **IBM Plex Sans** för brödtext. **IBM Plex Mono** för url-slugs och
   språktoggel.
 
-Varje `.door` sätter `--accent` inline med appens egen färg. En ljus accent som inte når 4,5:1 mot `--wall` sätter även `--tag` (accenten blandad med `--ink`) för taglinen, som Valheim. Accenten syns i taglinen och vid hovring, och går igen i appens egen ikon. Accentpricken `.knob` i ikonrutans hörn är borttagen (Patrik 2026-10-06): rutans klippning dolde den på alla dörrar utom de under arbete.
+Varje `.door` sätter `--accent` inline med appens egen färg. Text i accentfärg (taglinen och sluggen vid hovring) använder aldrig `--accent` direkt utan `--tag`, accenten blandad med `--ink`: 80 % accent i ljust läge och 60 % i mörkt, satt i stilmallen på `.door`. Det håller 4,5:1 både mot `--wall` och mot hovringens tonade bakgrund. En ljus accent som ändå inte når dit sätter en egen `--tag` inline med 40 % accent, som Dinodeck och Valheim (Bulk har 45 %). Räkna om kontrasten när en dörr får en ny accent. `om.html` och `integritet.html` har en egen `--accent` för länkar, `#9E2B3E` i ljust och `#D97083` i mörkt. Accenten syns i taglinen och vid hovring, och går igen i appens egen ikon. Accentpricken `.knob` i ikonrutans hörn är borttagen (Patrik 2026-10-06): rutans klippning dolde den på alla dörrar utom de under arbete.
 
 ## Environments and operations
 
