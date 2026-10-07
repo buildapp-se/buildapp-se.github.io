@@ -4,20 +4,20 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-06
+reviewedAt: 2026-10-07
 ---
 
 # Handoff: buildapp.se
 
 ## 2026-10-06: kontrast i accentfärgad text (nattbatch, grenen `batch/2026-10-06`)
 
-**Inte live.** Ändringen ligger i `73b8de2` på grenen `batch/2026-10-06` och väntar på merge till `main`. Backlogpunkten om manuell kontrastkontroll är gjord: alla textelement på `index.html`, `om.html` och `integritet.html` mättes i Chrome (lokala filer, 1100 px, ljust och mörkt, vila och hovring på dörrar och länkar). Före: 49 av 408 mätningar under 4,5:1. Efter: 0 av 408. Tre fel rättade:
+**Live sedan 2026-10-07.** Ändringen (`73b8de2`, byggd på grenen `batch/2026-10-06`) är mergad till `main` och deployad på Patriks order. Backlogpunkten om manuell kontrastkontroll är gjord: alla textelement på `index.html`, `om.html` och `integritet.html` mättes i Chrome (lokala filer, 1100 px, ljust och mörkt, vila och hovring på dörrar och länkar). Före: 49 av 408 mätningar under 4,5:1. Efter: 0 av 408. Tre fel rättade:
 
 - Mörkt läge: taglinen på sex dörrar (Flaskor, Beefcake, Sipdeck, Grammat, AI, Tidslinjen) låg på 2,4 till 2,9:1. `.door` sätter nu `--tag` för alla dörrar, 80 % accent i ljust och 60 % i mörkt. Det stänger den öppna punkten under 2026-09-23 nedan.
 - Hovring: sluggen fick ren `--accent` (ned till 1,5:1 för Dinodeck och Valheim) och taglinen tappade kontrast mot den tonade bakgrunden. Sluggen använder nu `--tag`, och Dinodecks och Valheims inline-`--tag` gick från 45 till 40 % accent.
 - `om.html` och `integritet.html`: länkarna i mörkt läge låg på 4,27:1 och "Tillbaka" vid hovring på 3,82:1. Mörk `--accent` ändrad från `#C9576A` till `#D97083`.
 
-Synlig effekt: taglines är en aning mörkare i ljust läge och tydligt ljusare i mörkt. Inte mätt: 360 px, fokusläge via tangentbord (samma regler som hovring), och axe är inte omkört. Kontrollskriptet låg i sessionens temp-katalog och är inte sparat i repot (inget byggsteg här); metoden är WCAG:s kontrastformel på beräknad textfärg mot sammanlagd bakgrund.
+Synlig effekt, nu live: taglines är en aning mörkare i ljust läge och tydligt ljusare i mörkt. Inte mätt: 360 px, fokusläge via tangentbord (samma regler som hovring), och axe är inte omkört. Kontrollskriptet låg i sessionens temp-katalog och är inte sparat i repot (inget byggsteg här); metoden är WCAG:s kontrastformel på beräknad textfärg mot sammanlagd bakgrund.
 
 Övriga öppna backlogpunkter rördes inte: touch-ikoner per app hör hemma i apparnas egna repon, säkerhetsheaders sätts i Cloudflare, och "håll dörrarna i takt" är löpande underhåll utan ny app att lägga till.
 
