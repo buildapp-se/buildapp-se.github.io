@@ -18,7 +18,7 @@ reviewedAt: 2026-10-10
 - `/.well-known/security.txt` finns, kontakt `kontakt@orgutveckling.se`, **går ut 2027-10-10** och måste förnyas före dess.
 - `og.source.html` pekar på `assets/fonts.css`. `og-image.png` är inte omrenderad (samma typsnitt, ingen synlig skillnad väntad).
 
-**Öppet, zonnivå, inte gjort:** DNS-fynden ur samma skanning står i `BACKLOG.md` under `## Granskning 2026-10-10`. Skanningens två "medium"-fynd om saknade headers var falsklarm, headerna mäts live.
+**Zonen, 2026-10-10 18:00:** fyra kvarglömda Strato-poster raderade (35 poster blev 31, buildapp.se och `/sipdeck/` svarar 200 efteråt) och DNSSEC påslaget i Cloudflare, status `pending` tills Patrik lagt DS-posten hos registraren. Värden och resten av DNS-fynden står i `BACKLOG.md` under `## Granskning 2026-10-10`. Skanningens två "medium"-fynd om saknade headers var falsklarm, headerna mäts live.
 
 ## 2026-10-06: kontrast i accentfärgad text (nattbatch, grenen `batch/2026-10-06`)
 

@@ -39,9 +39,9 @@ Fynd från den automatiska sviten (aifabriken `tools/audit-suite.ts`: headers, n
 
 Fynd från en extern Scantide-skanning, kontrollerade mot live-DNS. Alla tre är zoninställningar i Cloudflare och rör varje app på buildapp.se.
 
-- [ ] `[P2]` Fyra kvarglömda Strato-poster, alla skapade 2026-07-21 (lästa ur zonen 2026-10-10): SRV `_autodiscover._tcp` och CNAME `autoconfig` mot `autoconfigure.strato.de`, MX `*.buildapp.se` mot `smtp.rzone.de`, TXT `_domainkey` med `r=dkim@rzone.de`. Ingen Strato-brevlåda kan ta emot post för domänen: apex-MX går till Cloudflare Email Routing, och SPF plus `p=reject` stoppar utskick via Strato. Väntar på Patriks ja till raderingen.
+- [x] (2026-10-10 18:00) Fyra kvarglömda Strato-poster från 2026-07-21 raderade ur zonen: SRV `_autodiscover._tcp` (`100 443 autoconfigure.strato.de`, prio 0), CNAME `autoconfig` mot `autoconfigure.strato.de` (proxied), MX `*.buildapp.se` mot `smtp.rzone.de` (prio 5), TXT `_domainkey` med `o=~; t=y; r=dkim@rzone.de`. Värdena står här så att de går att återskapa.
 - [ ] `[P2]` `orgutveckling@buildapp.se` har ingen regel i Email Routing. Bara `kontakt@buildapp.se` vidarebefordras och catch-all är avstängd, så post dit studsar. Resend används bara för `beefcake.buildapp.se` och `familjehubben.buildapp.se`.
-- [ ] `[P2]` DNSSEC är av (ingen DS, ingen DNSKEY). Slå på i Cloudflare och lägg DS-posten hos registraren (InterNetX).
+- [ ] `[P2]` `[ready-for-human]` DNSSEC påslaget i Cloudflare 2026-10-10 18:00, status `pending` tills DS-posten ligger hos registraren (Strato/InterNetX): `buildapp.se. 3600 IN DS 2371 13 2 AA6ACC36388B759724C8A26546D3EA866BA94A75F6E41FD51B80620EABB68916` (key tag 2371, algoritm 13, digest type 2). Utan DS är inget skyddat men inget heller trasigt. Fel DS gör hela domänen onåbar.
 - [ ] `[P3]` CAA-post saknas. **Fälla:** `auth`, `beefcake`, `flaskor` och `sipdeck` är DNS only-CNAME till Firebase (`web.app`), som utfärdar egna certifikat. En CAA på apex ärvs av dem, så en för snäv post kan stoppa förnyelsen av Sipdecks inloggningsdomän. Låg vinst mot den risken.
 - [ ] `[P3]` DMARC är `p=reject` utan `rua`, så inga rapporter kommer. HSTS saknar `includeSubDomains`.
 - [x] (2026-10-10, `56ca548`) Google Fonts ersatt med egna filer, `security.txt` tillagd.
