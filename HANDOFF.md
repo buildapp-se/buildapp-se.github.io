@@ -9,6 +9,17 @@ reviewedAt: 2026-10-10
 
 # Handoff: buildapp.se
 
+## 2026-10-10: egna typsnitt, security.txt, Scantide-genomgång
+
+**Live sedan 2026-10-10 15:25** (`56ca548`). Utlöst av en extern Scantide-skanning av buildapp.se, genomgången från elwyn-dash.
+
+- Typsnitten ligger i `assets/fonts/` (fyra woff2, bara latin, samma filer som Google levererade) och laddas via `assets/fonts.css`. Ingen sida anropar Google längre. Verifierat lokalt i Chromium (sex snitt laddade, noll externa värdar) och live (alla filer 200, noll träffar på `googleapis`/`gstatic`/`Google` i de tre sidorna). Vikt 800 används i CSS men finns inte som eget snitt, precis som förut: webbläsaren väljer 900.
+- `integritet.html` är version 1.3: Google Fonts struket ur leverantörslistan och ur stycket om överföring, på svenska och engelska.
+- `/.well-known/security.txt` finns, kontakt `kontakt@orgutveckling.se`, **går ut 2027-10-10** och måste förnyas före dess.
+- `og.source.html` pekar på `assets/fonts.css`. `og-image.png` är inte omrenderad (samma typsnitt, ingen synlig skillnad väntad).
+
+**Öppet, zonnivå, inte gjort:** DNS-fynden ur samma skanning står i `BACKLOG.md` under `## Granskning 2026-10-10`. Skanningens två "medium"-fynd om saknade headers var falsklarm, headerna mäts live.
+
 ## 2026-10-06: kontrast i accentfärgad text (nattbatch, grenen `batch/2026-10-06`)
 
 **Live sedan 2026-10-07.** Ändringen (`73b8de2`, byggd på grenen `batch/2026-10-06`) är mergad till `main` och deployad på Patriks order. Backlogpunkten om manuell kontrastkontroll är gjord: alla textelement på `index.html`, `om.html` och `integritet.html` mättes i Chrome (lokala filer, 1100 px, ljust och mörkt, vila och hovring på dörrar och länkar). Före: 49 av 408 mätningar under 4,5:1. Efter: 0 av 408. Tre fel rättade:
