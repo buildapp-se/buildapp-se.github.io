@@ -4,7 +4,7 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-07
+reviewedAt: 2026-10-10
 ---
 
 # Handoff: buildapp.se

@@ -14,7 +14,7 @@
 
 ## Säkerhet
 
-- [ ] Säkerhetsheaders via en Transform Rule i Cloudflare. GitHub Pages ignorerar
+- [x] (gjord 2026-09-16, mätt live igen 2026-10-10) Säkerhetsheaders via en Transform Rule i Cloudflare. GitHub Pages ignorerar
   `_headers`, så det går inte att lösa i repot. Samma åtgärd som för de andra
   Pages-sajterna, se säkerhetsrepot.
 
@@ -34,3 +34,13 @@ Fynd från cockpitens granskningskolumner (Lighthouse mobil, W3C, UX-skript, hea
 Fynd från den automatiska sviten (aifabriken `tools/audit-suite.ts`: headers, npm audit, secrets, Actions, markup, axe). Mätvärdena står som `(automated)`-rader under `## Audits` i CONTEXT.md.
 
 - [x] `[P3]` (rättad 2026-10-06, `73b8de2` på grenen `batch/2026-10-06`, mergad till `main` och live 2026-10-07) WCAG: axe hittar 0 fel men kan inte avgöra kontrasten på 5 element. Kontrollen gjord i Chrome på alla tre sidorna, ljust och mörkt, vila och hovring: 49 av 408 textmätningar låg under 4,5:1, alla 408 klarar gränsen efter rättningen. Detaljer i `HANDOFF.md`.
+
+## Granskning 2026-10-10
+
+Fynd från en extern Scantide-skanning, kontrollerade mot live-DNS. Alla tre är zoninställningar i Cloudflare och rör varje app på buildapp.se.
+
+- [ ] `[P2]` Kvarglömd SRV-post: `_autodiscover._tcp.buildapp.se` pekar på `autoconfigure.strato.de:443`. Mailen går via Cloudflare Email Routing. Ta bort om ingen Strato-brevlåda används.
+- [ ] `[P2]` DNSSEC är av (ingen DS, ingen DNSKEY). Slå på i Cloudflare och lägg DS-posten hos registraren (InterNetX).
+- [ ] `[P3]` CAA-post saknas. Certifikaten utfärdas i dag av Google Trust Services via Cloudflare.
+- [ ] `[P3]` DMARC är `p=reject` utan `rua`, så inga rapporter kommer. HSTS saknar `includeSubDomains`.
+- [x] (2026-10-10, `56ca548`) Google Fonts ersatt med egna filer, `security.txt` tillagd.
