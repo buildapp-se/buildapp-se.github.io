@@ -1,0 +1,4 @@
+Canonical: https://buildapp.se/.well-known/security.txt
+Contact: mailto:kontakt@orgutveckling.se
+Expires: 2027-10-10T00:00:00Z
+Preferred-Languages: sv, en
