@@ -4,7 +4,7 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-10
+reviewedAt: 2026-10-11
 ---
 
 # Handoff: buildapp.se
@@ -17,6 +17,8 @@ reviewedAt: 2026-10-10
 - `integritet.html` är version 1.3: Google Fonts struket ur leverantörslistan och ur stycket om överföring, på svenska och engelska.
 - `/.well-known/security.txt` finns, kontakt `kontakt@orgutveckling.se`, **går ut 2027-10-10** och måste förnyas före dess.
 - `og.source.html` pekar på `assets/fonts.css`. `og-image.png` är inte omrenderad (samma typsnitt, ingen synlig skillnad väntad).
+
+**2026-10-11:** kontaktadressen på sajten är `kontakt@buildapp.se` (förut `kontakt@orgutveckling.se`), i `integritet.html` (nu version 1.4) och `security.txt`. Raderna ovan om 1.3 och den gamla adressen beskriver läget 2026-10-10.
 
 **Zonen, 2026-10-10 18:00:** fyra kvarglömda Strato-poster raderade (35 poster blev 31, buildapp.se och `/sipdeck/` svarar 200 efteråt) . DNSSEC är avstängt med flit (Stratos panel saknar DS-fält, liten vinst). Värden, beslut och resten av DNS-fynden står i `BACKLOG.md` under `## Granskning 2026-10-10`. Skanningens två "medium"-fynd om saknade headers var falsklarm, headerna mäts live.
 
