@@ -4,10 +4,14 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-11
+reviewedAt: 2026-10-17
 ---
 
 # Handoff: buildapp.se
+
+## 2026-10-17: dörr till ./terminal
+
+Ny dörr överst (nyast repo): spelet `./terminal` på `buildapp.se/terminal/` (repo `buildapp-se/terminal`, flyttat ur `ai` samma dag), märkt `wip`, bara SV, ikonen är spelets egen `favicon.svg`. Lagt i `sitemap.xml`. Skärmbild kontrollerad i 1280 och 390 px, ingen sidledsscroll.
 
 ## 2026-10-10: egna typsnitt, security.txt, Scantide-genomgång
 
