@@ -8,3 +8,4 @@ graft/
 # inga egna instruktioner. Halls lokalt. Skriver du riktiga instruktioner har:
 # ta bort raden nedan forst, annars hamnar de aldrig i git.
 AGENTS.md
+.playwright-mcp/
