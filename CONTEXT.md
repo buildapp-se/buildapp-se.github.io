@@ -61,7 +61,7 @@ Ingen backend, inga hemligheter.
 Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; conventions in elwyn-dash `docs/security.md`.
 
 - Headers: 2026-09-16, pass, 6 of 6 on buildapp.se via a host-scoped Transform Rule on the zone, measured after the change
-- Search Console: 2026-09-16, warn, sitemap with 9 URLs accepted, 0 errors, only / known indexed, per-URL inspection not read
+- Search Console: 2026-10-22, warn, sitemap last read 2026-10-17 (valid, 0 errors), resubmitted 2026-10-22 with beefcake. Indexed: /, /ai/, /sipdeck/, /terminal/. Discovered not indexed: /tidslinje/. Unknown to Google: /grammat/, /flaskor/, /bulk/, /dinodeck/, /valheim/. 90 days: 46 impressions, 3 clicks, "buildapp" ranks 2,5
 - TLS: 2026-09-16, pass, SSL Labs A+ on buildapp.se, TLS 1.2 minimum and HSTS since today
 - Lighthouse: 2026-09-16, pass, a11y 100 after the contrast and link-name fixes, best practices 100, SEO 100 (mobile, no perf)
 - Markup: 2026-09-16, pass, W3C 0 errors on / and om.html, 0 broken links (LinkedIn answers 999 to scripts)
