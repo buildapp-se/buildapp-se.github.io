@@ -4,10 +4,14 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-17
+reviewedAt: 2026-10-22
 ---
 
 # Handoff: buildapp.se
+
+## 2026-10-22: robots.txt
+
+`/robots.txt` fanns inte (404), påpekat av en extern DeployVet-skanning. Nu `Allow: /` plus `Sitemap:`-rad, live verifierat 200. Gäller hela buildapp.se, även projektsökvägarna. Beefcakes `noindex` krockar inte: Google måste få crawla sidan för att se `noindex`.
 
 ## 2026-10-17: dörr till ./terminal
 
