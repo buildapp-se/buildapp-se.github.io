@@ -11,7 +11,7 @@ reviewedAt: 2026-10-22
 
 ## 2026-10-22: robots.txt
 
-`/robots.txt` fanns inte (404), påpekat av en extern DeployVet-skanning. Nu `Allow: /` plus `Sitemap:`-rad, live verifierat 200. Gäller hela buildapp.se, även projektsökvägarna. Beefcakes `noindex` krockar inte: Google måste få crawla sidan för att se `noindex`.
+`/robots.txt` fanns inte (404), påpekat av en extern DeployVet-skanning. Nu `Allow: /` plus `Sitemap:`-rad, live verifierat 200. Gäller hela buildapp.se, även projektsökvägarna. Samma dag blev Beefcake indexerbar och lades i sitemapen (Cartman visas bara inloggad).
 
 ## 2026-10-17: dörr till ./terminal
 
@@ -48,7 +48,7 @@ De tre dörrarna under arbete visar nu appens egen ikon med bannern "Under arbet
 
 ## 2026-10-03: tre dörrar under arbete
 
-Dinodeck (överst), Bulk (tvåa) och Beefcake (efter Flaskor) har dörrar med skylten "Under arbete" i stället för ikon (`2cd2345`), regeln står i `CONTEXT.md`. Accenter ur respektive app: Dinodeck `#f2a03d`, Bulk `#137738` (appens `--deal` i sRGB), båda med `--tag` eftersom de inte når 4,5:1 mot `--wall`, Beefcake `#b8202f` (appens `--accent-strong`). Verifierat live på 360 px, engelska, ljust läge: nio dörrar, ingen sidscroll, skylttexten 12 px utan klippning, taglines 4,59 till 7,80:1. Mörkt läge är bara sett på provsidan, inte live. `/dinodeck/` och `/bulk/` ligger i `sitemap.xml` (Beefcake är `noindex` med avsikt och står inte där). **Öppet:** meta-beskrivningen räknar inte upp de nya projekten och inte heller Flaskor. Provsidan `wip-skyltar.html` (Codex, tre rundor, även bannervarianterna D1 till D3 för skylt över en ikon) var aldrig committad och raderades 2026-10-06.
+Dinodeck (överst), Bulk (tvåa) och Beefcake (efter Flaskor) har dörrar med skylten "Under arbete" i stället för ikon (`2cd2345`), regeln står i `CONTEXT.md`. Accenter ur respektive app: Dinodeck `#f2a03d`, Bulk `#137738` (appens `--deal` i sRGB), båda med `--tag` eftersom de inte når 4,5:1 mot `--wall`, Beefcake `#b8202f` (appens `--accent-strong`). Verifierat live på 360 px, engelska, ljust läge: nio dörrar, ingen sidscroll, skylttexten 12 px utan klippning, taglines 4,59 till 7,80:1. Mörkt läge är bara sett på provsidan, inte live. `/dinodeck/` och `/bulk/` ligger i `sitemap.xml` (Beefcake var `noindex` till 2026-10-22, nu indexerbar och i sitemapen). **Öppet:** meta-beskrivningen räknar inte upp de nya projekten och inte heller Flaskor. Provsidan `wip-skyltar.html` (Codex, tre rundor, även bannervarianterna D1 till D3 för skylt över en ikon) var aldrig committad och raderades 2026-10-06.
 
 ## 2026-09-24: tryckytor (UX-audit från aifabriken)
 
