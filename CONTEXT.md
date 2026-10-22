@@ -36,7 +36,8 @@ produkt, den är huset, och varje undersida är en dörr.
 - Loggan och faviconen använder endast `--ink` och `--wall`, aldrig en apps
   accentfärg, så att varumärket förblir neutralt.
 - Ingen build-time-i18n. Varje översatt textnod har `data-sv` och `data-en`.
-- Ordningen på dörrarna är nyast repo överst, med undantag för Valheim Food Planner som ligger sist (Patriks val 2026-09-15).
+- Ordningen på dörrarna är nyast repo överst, med undantag för Valheim Food Planner som ligger sist bland de färdiga (Patriks val 2026-09-15). Dörrar under arbete ligger i en egen sektion efter alla färdiga, under rubriken `h2.section-label` "Under arbete", också de nyast överst (Patrik 2026-10-22). Klart projekt: flytta dörren upp bland de färdiga och byt titeln från `h3` till `h2`.
+- Rubrikstruktur (2026-10-22, efter en extern SEO-granskning): `h1` är ordmärket plus undertiteln "webbappar, spel och guider", färdiga projekts titlar är `h2`, projekt under arbete `h3`. Dörrens rad och kropp är `div`, inte `span`, eftersom en rubrik inte får ligga i en `span`. Sidtiteln är "Webbappar, spel och guider | buildapp.se", canonical pekar på `https://buildapp.se/`.
 - Varje dörr visar vilka språk appen finns på som chips under sluggen (`.door-langs`, SV och/eller EN). Chipsen följer appen, inte katalogsidans språkval, så kontrollera dem när en app får eller tappar ett språk.
 
 ## Designtokens

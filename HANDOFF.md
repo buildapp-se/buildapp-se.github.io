@@ -9,6 +9,10 @@ reviewedAt: 2026-10-22
 
 # Handoff: buildapp.se
 
+## 2026-10-22: SEO-fynd från Käftsmäll, projekt under arbete sist
+
+Ny sidtitel, canonical, metabeskrivning som räknar upp alla ämnen (även og och twitter), rubrikstruktur (se CONTEXT), "macken" blev "butiken" i Grammat, Beefcake-kortet säger nu att appen fungerar utan konto (gästläget finns sedan 2026-10-03, kortet sa "Kräver inloggning"). De fyra projekten under arbete ligger i en egen sektion sist. Granskningens påstående att alla bilder saknar alt var fel: alla har `alt=""`, rätt för ikoner som upprepar titeln. Verifierat i Chromium 390 och 1280 px: ingen sidledsscroll, alla tio ikoner laddar, rubrikerna i rätt ordning. **Öppet:** metabeskrivningen är bara svensk, språkknappen byter inte head-taggarna.
+
 ## 2026-10-22: robots.txt
 
 `/robots.txt` fanns inte (404), påpekat av en extern DeployVet-skanning. Nu `Allow: /` plus `Sitemap:`-rad, live verifierat 200. Gäller hela buildapp.se, även projektsökvägarna. Samma dag blev Beefcake indexerbar och lades i sitemapen (Cartman visas bara inloggad).
