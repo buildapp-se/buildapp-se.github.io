@@ -4,10 +4,14 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-22
+reviewedAt: 2026-10-27
 ---
 
 # Handoff: buildapp.se
+
+## 2026-10-27: ny ikon på /ai-dörren
+
+`assets/ai-mark.png` ersatt med den nya /ai-faviconen (solsystemet), renderad 512 px i ljust läge med Playwright, transparenta hörn som Tidslinjens. Skärmbild kontrollerad i 1280 px ljust och 390 px mörkt. **Öppet:** live-/ai visar ännu gamla `>_`-faviconen och dörrens accent är kvar `#35606F`; ses över när nya /ai publiceras.
 
 ## 2026-10-22: SEO-fynd från Käftsmäll, projekt under arbete sist
 

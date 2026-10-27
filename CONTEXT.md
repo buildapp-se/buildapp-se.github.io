@@ -14,9 +14,12 @@ produkt, den är huset, och varje undersida är en dörr.
 - `favicon.svg` är självbärande och byter färg via `prefers-color-scheme` inbyggt i
   SVG:n. `assets/icon-32.png` är fallback för äldre webbläsare och `icon-192.png`
   är apple-touch-icon, eftersom iOS inte stödjer SVG-favicons.
-- `assets/ai-mark.png` och `assets/valheim-mark.svg` är självhostade kopior, eftersom
-  AI-appen och Valheim saknar egen ikonfil på sin domän (Valheims ikon finns bara
-  som data-URI i dess HTML). Övriga appars ikoner refereras direkt via `buildapp.se`.
+- `assets/ai-mark.png` och `assets/valheim-mark.svg` är självhostade kopior (Valheims
+  ikon finns bara som data-URI i dess HTML). `ai-mark.png` (512 px, transparenta
+  hörn) är sedan 2026-10-27 renderad i ljust läge ur den nya /ai-faviconen
+  (solsystemet, webbverkstad `runs/ai-solsystem/directions/a/favicon.svg`, viewBox
+  beskuren till rutan); live-/ai har fortfarande den gamla `>_`-ikonen tills den nya
+  sidan publiceras. Övriga appars ikoner refereras direkt via `buildapp.se`.
 
 ## Constraints
 
