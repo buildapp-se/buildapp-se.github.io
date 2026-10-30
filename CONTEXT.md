@@ -16,10 +16,9 @@ produkt, den är huset, och varje undersida är en dörr.
   är apple-touch-icon, eftersom iOS inte stödjer SVG-favicons.
 - `assets/ai-mark.png` och `assets/valheim-mark.svg` är självhostade kopior (Valheims
   ikon finns bara som data-URI i dess HTML). `ai-mark.png` (512 px, transparenta
-  hörn) är sedan 2026-10-27 renderad i ljust läge ur den nya /ai-faviconen
-  (solsystemet, webbverkstad `runs/ai-solsystem/directions/a/favicon.svg`, viewBox
-  beskuren till rutan); live-/ai har fortfarande den gamla `>_`-ikonen tills den nya
-  sidan publiceras. Övriga appars ikoner refereras direkt via `buildapp.se`.
+  hörn) är en rendering av `favicon.svg` i repot `ai` ("Två banor"). Byter /ai ikon
+  måste den renderas om här, och `?v=` i `index.html` höjas: Cloudflare och webbläsare
+  cachar filen i 4 timmar. Övriga appars ikoner refereras direkt via `buildapp.se`.
 
 ## Constraints
 
