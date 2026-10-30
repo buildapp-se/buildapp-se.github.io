@@ -64,7 +64,7 @@ Ingen backend, inga hemligheter.
 ## Audits
 Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; conventions in elwyn-dash `docs/security.md`.
 
-- OWASP Top 10: 2026-10-26, pass, code review only (Gemini 3.8 Flash, verified by Claude), static site with no forms, fetch or innerHTML; 0 high, 0 medium open
+- OWASP Top 10: 2026-10-30, warn, code review (Mistral Large, medium and high checked by Claude), no live probe; 0 high, 2 medium: zone CSP lacks script-src, catalog shares origin with account-bearing apps
 - Headers: 2026-09-16, pass, 6 of 6 on buildapp.se via a host-scoped Transform Rule on the zone, measured after the change
 - Search Console: 2026-10-22, warn, sitemap last read 2026-10-17 (valid, 0 errors), resubmitted 2026-10-22 with beefcake. Indexed: /, /ai/, /sipdeck/, /terminal/. Discovered not indexed: /tidslinje/. Unknown to Google: /grammat/, /flaskor/, /bulk/, /dinodeck/, /valheim/. 90 days: 46 impressions, 3 clicks, "buildapp" ranks 2,5
 - TLS: 2026-09-16, pass, SSL Labs A+ on buildapp.se, TLS 1.2 minimum and HSTS since today
