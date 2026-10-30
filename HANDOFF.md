@@ -11,7 +11,7 @@ reviewedAt: 2026-10-30
 
 ## 2026-10-30: /ai-dörren fick "Två banor"
 
-`ai` bytte ikon 2026-10-29, dörren låg kvar på solsystemet från 2026-10-27. `assets/ai-mark.png` omrenderad 512 px ur `ai/favicon.svg`, `?v=3` i `index.html` för att slå igenom cachen (`?v=2` förbrändes: hämtad före deployen, så Cloudflare cachade gamla bilden under den adressen). **Öppet:** dörrens accent är kvar `#35606F` och dess text beskriver den gamla länklistan ("Kuraterad länklista"), inte solsystemssidan "Från idé till publicerad sida".
+`ai` bytte ikon 2026-10-29, dörren låg kvar på solsystemet från 2026-10-27. `assets/ai-mark.png` omrenderad 512 px ur `ai/favicon.svg`, `?v=3` i `index.html` för att slå igenom cachen (`?v=2` förbrändes: hämtad före deployen, så Cloudflare cachade gamla bilden under den adressen). Dörrens rubrik och text (SV och EN) omskrivna till "Från idé till publicerad sida". **Öppet:** dörrens accent är kvar `#35606F`, och metabeskrivningarna (`index.html:8, 13, 22`) räknar fortfarande upp "Claude Code" som ämne.
 
 ## 2026-10-27: ny ikon på /ai-dörren
 
