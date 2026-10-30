@@ -18,7 +18,8 @@ produkt, den är huset, och varje undersida är en dörr.
   ikon finns bara som data-URI i dess HTML). `ai-mark.png` (512 px, transparenta
   hörn) är en rendering av `favicon.svg` i repot `ai` ("Två banor"). Byter /ai ikon
   måste den renderas om här, och `?v=` i `index.html` höjas: Cloudflare och webbläsare
-  cachar filen i 4 timmar. Övriga appars ikoner refereras direkt via `buildapp.se`.
+  cachar filen i 4 timmar. Hämta inte den nya `?v=`-adressen före deployen, då cachas
+  den gamla bilden under den. Övriga appars ikoner refereras direkt via `buildapp.se`.
 
 ## Constraints
 
