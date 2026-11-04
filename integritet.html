@@ -61,8 +61,8 @@ a{color:inherit}
 .lang-toggle{display:flex;border:1.5px solid var(--line);border-radius:100px;overflow:hidden;flex-shrink:0}
 .lang-toggle button{background:transparent;border:0;cursor:pointer;padding:.4em .9em;min-height:44px;min-width:44px;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--ink-2)}
 .lang-toggle button.active{background:var(--ink);color:var(--wall-2)}
-.back{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;border-bottom:1px solid transparent;text-decoration:none}
-.back:hover{border-color:var(--accent);color:var(--accent)}
+.back{display:inline-flex;align-items:center;min-height:44px;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);white-space:nowrap;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}
+.back:hover{text-decoration-color:var(--accent);color:var(--accent)}
 
 main{padding-top:clamp(2rem,6vw,3.5rem);padding-bottom:clamp(3rem,8vw,5rem)}
 h1{font-family:var(--font-display);font-weight:900;font-size:clamp(2rem,6vw,3rem);text-transform:uppercase;line-height:1;letter-spacing:-.01em}
@@ -81,6 +81,7 @@ main a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--li
 main a:hover{border-color:var(--accent)}
 
 .street-foot{padding-top:1.5rem;padding-bottom:3rem;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);text-align:center;border-top:1px solid var(--line)}
+.street-foot a{display:inline-block;padding:14px 2px}
 </style>
 </head>
 <body>
@@ -156,7 +157,7 @@ main a:hover{border-color:var(--accent)}
   <ul>
     <li><a href="/sipdeck/info.html">Sipdeck: integritet, lokal lagring och villkor</a></li>
     <li><a href="/grammat/integritet.html">Grammat: integritetspolicy</a></li>
-    <li><a href="/ai/integritet.html">Lär dig Claude Code: integritetspolicy</a></li>
+    <li><a href="/ai/integritet.html">Från idé till publicerad sida: integritetspolicy</a></li>
     <li><a href="/tidslinje/integritet.html">Arbetarrörelsens tidslinje: integritetspolicy</a></li>
     <li><a href="/valheim/privacy.html">Valheim Food Planner: integritetspolicy (engelska)</a></li>
   </ul>
@@ -213,7 +214,7 @@ main a:hover{border-color:var(--accent)}
   <ul>
     <li><a href="/sipdeck/info.html">Sipdeck: privacy, local storage and terms</a></li>
     <li><a href="/grammat/integritet.html">Grammat: privacy policy (Swedish)</a></li>
-    <li><a href="/ai/integritet.html">Learn Claude Code: privacy policy</a></li>
+    <li><a href="/ai/integritet.html">From idea to published site: privacy policy</a></li>
     <li><a href="/tidslinje/integritet.html">The labour movement timeline: privacy policy (Swedish)</a></li>
     <li><a href="/valheim/privacy.html">Valheim Food Planner: privacy policy</a></li>
   </ul>
@@ -245,7 +246,7 @@ main a:hover{border-color:var(--accent)}
     document.querySelectorAll('[data-sv]').forEach(function(el){
       el.textContent = lang === 'sv' ? el.getAttribute('data-sv') : el.getAttribute('data-en');
     });
-    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    buttons.forEach(function(b){ var on = b.dataset.lang === lang; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
   }
 
   var saved;

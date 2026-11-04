@@ -4,10 +4,20 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-10-30
+reviewedAt: 2026-11-04
 ---
 
 # Handoff: buildapp.se
+
+## 2026-11-04: förbättringsrunda (grenen `claude/forbattringar-2026-11-04`, PR #1, inte mergad)
+
+Bara buggar, tillgänglighet och felaktig text, inget nytt innehåll.
+
+- Språkknappen anger valt läge med `aria-pressed` på alla tre sidorna. På `index.html` kastade `localStorage` när webbplatsdata är blockerad och knappen slutade fungera; nu `try/catch` som på de andra sidorna.
+- "Tillbaka" i sidhuvudet och "Tillbaka till dörrarna" i sidfoten på `om.html` och `integritet.html` är 44 px höga (var 19 och 15 px).
+- `/ai` kallas inte längre "Lär dig Claude Code" i `integritet.html`, och metabeskrivningarna säger "AI-bolagen på en karta" i stället för "Claude Code". Policyns versionsnummer (1.4) är inte höjt, bara en länktext ändrades.
+
+Verifierat lokalt i Chromium: axe-core 0 fel på alla tre sidorna, ljust och mörkt, 390 och 1280 px, ingen sidledsscroll. Inte deployat, inte kontrollerat live. **Kvar:** undertiteln skiljer sig mellan katalogsidan ("webbappar, spel och guider") och `om.html`/`integritet.html` ("en samling småprojekt"), lämnad till Patrik.
 
 ## 2026-10-30: /ai-dörren fick "Två banor"
 
