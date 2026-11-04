@@ -302,17 +302,18 @@ arbete</span></span>
     document.querySelectorAll('[data-sv]').forEach(function(el){
       el.textContent = lang === 'sv' ? el.getAttribute('data-sv') : el.getAttribute('data-en');
     });
-    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    buttons.forEach(function(b){ var on = b.dataset.lang === lang; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
   }
 
-  var saved = localStorage.getItem(KEY);
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { saved = null; }
   var guess = (navigator.language || 'sv').toLowerCase().indexOf('sv') === 0 ? 'sv' : 'en';
   apply(saved || guess);
 
   toggle.addEventListener('click', function(e){
     var btn = e.target.closest('button[data-lang]');
     if(!btn) return;
-    localStorage.setItem(KEY, btn.dataset.lang);
+    try { localStorage.setItem(KEY, btn.dataset.lang); } catch (e) {}
     apply(btn.dataset.lang);
   });
 })();

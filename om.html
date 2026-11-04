@@ -151,7 +151,7 @@ main a:hover{border-color:var(--accent)}
     document.querySelectorAll('[data-sv]').forEach(function(el){
       el.textContent = lang === 'sv' ? el.getAttribute('data-sv') : el.getAttribute('data-en');
     });
-    buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    buttons.forEach(function(b){ var on = b.dataset.lang === lang; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
   }
 
   var saved;
