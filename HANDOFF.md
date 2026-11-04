@@ -9,7 +9,7 @@ reviewedAt: 2026-11-04
 
 # Handoff: buildapp.se
 
-## 2026-11-04: förbättringsrunda (grenen `claude/forbattringar-2026-11-04`, PR #1, inte mergad)
+## 2026-11-04: förbättringsrunda (grenen `claude/forbattringar-2026-11-04`, PR #1, mergad 2026-11-04)
 
 Bara buggar, tillgänglighet och felaktig text, inget nytt innehåll.
 
@@ -17,7 +17,7 @@ Bara buggar, tillgänglighet och felaktig text, inget nytt innehåll.
 - "Tillbaka" i sidhuvudet och "Tillbaka till dörrarna" i sidfoten på `om.html` och `integritet.html` är 44 px höga (var 19 och 15 px).
 - `/ai` kallas inte längre "Lär dig Claude Code" i `integritet.html`, och metabeskrivningarna säger "AI-bolagen på en karta" i stället för "Claude Code". Policyns versionsnummer (1.4) är inte höjt, bara en länktext ändrades.
 
-Verifierat lokalt i Chromium: axe-core 0 fel på alla tre sidorna, ljust och mörkt, 390 och 1280 px, ingen sidledsscroll. Inte deployat, inte kontrollerat live. **Kvar:** undertiteln skiljer sig mellan katalogsidan ("webbappar, spel och guider") och `om.html`/`integritet.html` ("en samling småprojekt"), lämnad till Patrik.
+Verifierat lokalt i Chromium: axe-core 0 fel på alla tre sidorna, ljust och mörkt, 390 och 1280 px, ingen sidledsscroll. Deployat via Pages vid merge. **Kvar:** undertiteln skiljer sig mellan katalogsidan ("webbappar, spel och guider") och `om.html`/`integritet.html` ("en samling småprojekt"), lämnad till Patrik.
 
 ## 2026-10-30: /ai-dörren fick "Två banor"
 
