@@ -21,6 +21,36 @@ produkt, den är huset, och varje undersida är en dörr.
   cachar filen i 4 timmar. Hämta inte den nya `?v=`-adressen före deployen, då cachas
   den gamla bilden under den. Övriga appars ikoner refereras direkt via `buildapp.se`.
 
+```mermaid
+graph LR
+  USER[Webbläsare]
+  CF[Cloudflare framför buildapp.se]
+  PAGES[GitHub Pages org-rot]
+
+  subgraph SITE["buildapp.se"]
+    INDEX[index.html katalog]
+    OM[om.html och integritet.html]
+    ASSETS[assets/ ikoner och typsnitt]
+  end
+
+  APPS[Appar under buildapp.se/namn]
+
+  USER --> CF
+  CF --> PAGES
+  PAGES --> INDEX
+  PAGES --> OM
+  INDEX --> ASSETS
+  INDEX -->|dörrar| APPS
+```
+
+## Stack
+
+- Frontend: en `index.html` med inline CSS och lite vanilla JS för språktoggeln, inga beroenden
+- Kod: HTML, CSS, JavaScript, inget byggsteg
+- Typsnitt: självhostade i `assets/fonts/`
+- Data: ingen backend, inga hemligheter
+- Hosting: GitHub Pages, org-rot-repot från `main`, buildapp.se bakom Cloudflare
+
 ## Constraints
 
 - ⚠️ `CNAME` är GitHub-genererad från Pages-inställningen för custom domain. Rör den
