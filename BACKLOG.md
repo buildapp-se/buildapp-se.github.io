@@ -46,3 +46,12 @@ Fynd från en extern Scantide-skanning, kontrollerade mot live-DNS. Alla tre är
 - [x] (2026-10-11) HSTS har `includeSubDomains` (zoninställning i Cloudflare, `max-age=15552000`, ingen preload). Mätt live på `buildapp.se`, `hemmaplan` och `cockpit`. Firebase-värdarna (`sipdeck`, `auth`, `beefcake`, `flaskor`) skickar egen HSTS på ett år. Följd: ingen underdomän på zonen kan köras utan HTTPS.
 - [x] (2026-10-11) `[wontfix]` DMARC `rua`: bortvald av Patrik. DMARC är redan `p=reject`, `rua` ger bara XML-rapporter i inkorgen. Ta upp igen om någon förfalskar mejl från domänen.
 - [x] (2026-10-10, `56ca548`) Google Fonts ersatt med egna filer, `security.txt` tillagd.
+
+## Granskning 2026-11-24
+
+UX-audit (ux-checks 6 av 6 pass, skärmbildsgranskning 390 och 1440 px, ljust och mörkt) och en dörr-i-takt-kontroll mot live.
+
+- [x] `[P3]` (rättad 2026-11-24, `ecf3d27`) Sidfoten på `index.html` vid 390 px svenska och 320 px engelska: mittpunkten stod ensam sist på raden och "Om oss" ensam på nästa. Under 30rem står "Fortsättning följer." på egen rad och länkarna på nästa.
+- [x] `[P3]` (rättad 2026-11-24, `e825a03`) `integritet.html` "Projekten bakom dörrarna" saknade Dinodecks och ./terminals policyer, båda live 200. Länkade på svenska och engelska.
+- [ ] `[P2]` `integritet.html` säger att varje projekt bakom en dörr har en egen policy, men Flaskor, Beefcake och Bulk har ingen (ingen fil i repona, inga träffar live). Flaskor och Beefcake har konton. Policyn skrivs i respektive app-repo, sedan läggs länken här.
+- [ ] `[P3]` Undertiteln skiljer sig: "webbappar, spel och guider" på `index.html`, "en samling småprojekt" på `om.html` och `integritet.html` (Similarity). Smakfråga, Patrik väljer.

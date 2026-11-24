@@ -4,10 +4,19 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-11-04
+reviewedAt: 2026-11-24
 ---
 
 # Handoff: buildapp.se
+
+## 2026-11-24: djuppass (grenen `deep/2026-11-24`, worktree `buildapp-se.github.io-deep-1124`) - klar
+
+Batch 1 hade inte rört repot i dag. BACKLOG: inga öppna P0-P2 som en agent kan stänga; CAA (P3) är en zonändring med risk för Firebase-certifikaten och touch-ikoner hör till app-repona, båda orörda. Mutationstest: inget, repot har ingen kod med tester (ingen `package.json`).
+
+- Dörrarna i takt: alla tio dörrar, ikoner, sitemap-adresser, `robots.txt` och `security.txt` svarar 200 live. Språkchipsen stämmer mot apparna (Dinodeck har EN i källkoden). Tre appar i org:en saknar dörr, `bildfab`, `investeringar` och `wow`, alla `noindex`, alltså olistade med avsikt.
+- UX-audit (skillen `ux-audit`): skriptet 6 av 6 pass på index, om och integritet med `--interact`, lokalt via `python -m http.server`. Skärmbilder 390 och 1440 px, ljust och mörkt: ingen sidledsscroll, alla bilder laddar. Ett fynd rättat: ensam mittpunkt i sidfoten på smal skärm (`ecf3d27`). Kontrollskriptet (separator på samma rad som grannarna, 320/390/1440 px, sv/en) fallerade mot live före ändringen och passerar efter.
+- `integritet.html` länkar nu Dinodecks och ./terminals policyer (`e825a03`). Versionsnumret (1.4) är inte höjt: bara länkar tillagda, ingen behandling ändrad.
+- **Kvar:** Flaskor, Beefcake och Bulk saknar policy fast sidan påstår att alla har en (BACKLOG P2); undertiteln (BACKLOG P3, smak). Fälla: port 5287 användes av en annan workers Dinodeck-server, första UX-körningen mätte fel app. Kontrollera alltid `<title>` på den lokala servern först.
 
 ## 2026-11-04: förbättringsrunda (grenen `claude/forbattringar-2026-11-04`, PR #1, mergad 2026-11-04)
 
