@@ -9,6 +9,15 @@ reviewedAt: 2026-11-25
 
 # Handoff: buildapp.se
 
+## 2026-11-25: scenariobuggjakt (grenen `p3/2026-11-25`, worktree `buildapp-se.github.io-1125p`) - klar
+
+Sex scenarier i headless Chromium (`%TEMP%/aifabriken-lanes/p3-buildapp-se.github.io/scenarios.mjs` och `cls.mjs`, utanför repot): bakåtknappen efter språkbyte, två flikar, sparat felvärde, blockerad lagring plus ikoner som inte laddar, breddbyte, CLS med fördröjda typsnitt. Före: 5 av 10 fel, både lokalt och live. Efter: 10 av 10 pass live. Pushat och live via Pages (`38270fe`, `5b92166`).
+
+- Språket läses om vid `pageshow` (bfcache) och `storage` (annan flik), och bara `sv`/`en` godtas ur `localStorage`, på alla tre sidorna. Fälla vid test: Playwright stänger av bfcache (`--disable-back-forward-cache`) och headless-skalet maskerar den; använd `channel: 'chromium'`, `ignoreDefaultArgs` för flaggan och `goBack({ waitUntil: 'commit' })`.
+- `--font-mono` har `'Courier New'` före `monospace`: undertiteln bröts annars om från en till två rader när Plex Mono kom. CLS vid 390 px 0,0185 till 0,0006 live.
+
+**Kvar:** CLS 0,0086 vid 1440 px från dörrtexterna (BACKLOG P3, `size-adjust`).
+
 ## 2026-11-25: fart, tillgänglighet och metadata (grenen `speed/2026-11-25`, worktree `buildapp-se.github.io-1125s`) - klar
 
 Mätt live med ett headless Playwright-skript (390 px med 4x CPU och Slow 4G, samt 1440 px; LCP, CLS, överföring, renderblockerande begäran, axe-core 4.14.0). Två ändringar, pushade och live via Pages (`26bc551`, `2c29d92`):

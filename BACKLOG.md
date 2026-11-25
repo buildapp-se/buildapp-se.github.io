@@ -64,4 +64,14 @@ Fart, tillgänglighet och metadata, mätt live med headless Chromium: 390 px med
 - [x] `[P3]` (rättad 2026-11-25, `2c29d92`) `assets/ai-mark.png` var 512 px och 22 710 B för en 72 px ikon; nu 216 px palett-PNG, 4 254 B, `?v=4`. De fyra översta dörrikonerna (ovanför vecket vid 390 px) laddas inte längre lat. Index överför 274 till 253 KB.
 - [x] Metadata kontrollerad, inget att rätta: unik titel och beskrivning, `lang="sv"`, canonical, `og:image` 1200x630 och favicon på alla tre sidorna; ingen PWA, alltså inget manifest. axe-core 4.14.0: 0 fel på alla tre sidorna i båda bredderna.
 - [ ] `[P3]` Dörrikonerna från apparna är 512 px PNG men visas i 52 till 72 px: Dinodeck 47 KB, Grammat 22 KB, Sipdeck 17 KB, Beefcake 15 KB. Sex app-PNG:er väger sammanlagt 124 KB (uppmätt med curl). En mindre variant görs i respektive app-repo: regeln är att länka appens riktiga ikon, så filen skapas där, inte här.
-- [ ] `[P3]` CLS 0,018 på index vid 390 px (gräns för bra: 0,1): sidhuvudet flyttar `main` när typsnitten byts in efter första målningen på Slow 4G. Kräver justerade reservtypsnitt (`size-adjust`), inte gjort.
+- [x] `[P3]` (rättad 2026-11-25, `5b92166`) CLS 0,018 på index vid 390 px: undertiteln i sidhuvudet stod på en rad i reservtypsnittet (Consolas på Windows) och på två i IBM Plex Mono, så `main` flyttades 16,8 px när typsnittet kom. `--font-mono` har nu `'Courier New'` före `monospace` (samma teckenbredd som Plex Mono) på alla tre sidorna. Live med typsnitten fördröjda 1,5 s: 390 px 0,0185 till 0,0006 (svenska) och 0,0002 (engelska).
+- [ ] `[P3]` CLS 0,0086 på index vid 1440 px med typsnitten fördröjda 1,5 s: dörrtexterna radbryts om när IBM Plex Sans ersätter reservtypsnittet. Under gränsen 0,1; kräver ett reservtypsnitt med `size-adjust`.
+
+## Scenarier 2026-11-25
+
+Headless Chromium med bfcache påslaget, mot lokal server och live. Skriptet ligger utanför repot (`%TEMP%/aifabriken-lanes/p3-buildapp-se.github.io/scenarios.mjs`), 10 av 10 pass live efter rättningen, 5 fel före.
+
+- [x] `[P2]` (rättad 2026-11-25, `38270fe`) Bakåtknappen: byter man till engelska på `om.html` och går tillbaka visade katalogsidan svenska, eftersom webbläsaren återställer den ur bfcache utan att köra skriptet igen. Språket läses nu om vid `pageshow` med `persisted`.
+- [x] `[P3]` (rättad 2026-11-25, `38270fe`) Två flikar: språkbyte i en flik slog inte igenom i den andra förrän omladdning. Nu via `storage`-händelsen.
+- [x] `[P3]` (rättad 2026-11-25, `38270fe`) Ett sparat värde i `buildapp-lang` som inte är `sv` eller `en` gav ingen aktiv knapp, och på `om.html` och `integritet.html` dolde det all text. Ingen känd kod skriver ett sådant värde (ingen app i `C:\dev` använder nyckeln); nu faller sidan tillbaka på webbläsarens språk.
+- [x] Utan fel: blockerad lagring plus ikoner som inte laddar (knappen fungerar, inga JS-fel), breddbyte 1440, 320, 768 och 390 px utan sidledsscroll.
