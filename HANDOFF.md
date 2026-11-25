@@ -9,6 +9,13 @@ reviewedAt: 2026-11-25
 
 # Handoff: buildapp.se
 
+## 2026-11-25: webbläsarpass (grenen `xb/2026-11-25`, worktree `buildapp-se.github.io-1125x`) - klar
+
+Alla tidigare test gick i Chromium. Nu headless WebKit (Playwright, iPhone 13-profil, 390 px med touch) och Firefox 1440 px, plus WebKit och Chromium i samma bredder som jämförelse, ljust och mörkt, mot live. Playwright-core 1.64.1 (webkit-2370, firefox-1555, chromium-1248). Skript utanför repot: `%TEMP%/aifabriken-lanes/xb-buildapp-se.github.io/xb.mjs` och `vf.mjs`. Ingen riktig iPhone är testad.
+
+- Lika i alla fem konfigurationerna på index, om och integritet: ingen sidledsscroll, alla bilder laddar, inga JS- eller konsolfel, språkknappen (tap i WebKit), språket följer med till `om.html`, tillbaka och till en andra flik, `color-mix` i taglinen ger samma färg, bannern "Under arbete" står på två rader, ikoner och titlar i linje. Sidan har inga formulär, datum, dialoger, sticky-huvud, delning, service worker eller IndexedDB att testa.
+- Enda synliga skillnaden: WebKit (Playwright) på Windows ritar Big Shoulders Display i tunnaste vikten. Typsnittet är variabelt (`wght` 100 till 900, standard 100), och den här WebKit-builden ritar standardinstansen även med viktintervall i `@font-face` och med `font-variation-settings` i en minimal testsida (`vf.mjs`), medan radbredderna blir desamma som i Chromium och Firefox. Det är buildens rendering, inte sidans kod. Ingen ändring gjord. Fälla för nästa webbläsarpass: jämför inte rubrikernas tjocklek i Playwright-WebKit på Windows.
+
 ## 2026-11-25: scenariobuggjakt (grenen `p3/2026-11-25`, worktree `buildapp-se.github.io-1125p`) - klar
 
 Sex scenarier i headless Chromium (`%TEMP%/aifabriken-lanes/p3-buildapp-se.github.io/scenarios.mjs` och `cls.mjs`, utanför repot): bakåtknappen efter språkbyte, två flikar, sparat felvärde, blockerad lagring plus ikoner som inte laddar, breddbyte, CLS med fördröjda typsnitt. Före: 5 av 10 fel, både lokalt och live. Efter: 10 av 10 pass live. Pushat och live via Pages (`38270fe`, `5b92166`).

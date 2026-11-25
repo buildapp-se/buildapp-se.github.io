@@ -75,3 +75,9 @@ Headless Chromium med bfcache påslaget, mot lokal server och live. Skriptet lig
 - [x] `[P3]` (rättad 2026-11-25, `38270fe`) Två flikar: språkbyte i en flik slog inte igenom i den andra förrän omladdning. Nu via `storage`-händelsen.
 - [x] `[P3]` (rättad 2026-11-25, `38270fe`) Ett sparat värde i `buildapp-lang` som inte är `sv` eller `en` gav ingen aktiv knapp, och på `om.html` och `integritet.html` dolde det all text. Ingen känd kod skriver ett sådant värde (ingen app i `C:\dev` använder nyckeln); nu faller sidan tillbaka på webbläsarens språk.
 - [x] Utan fel: blockerad lagring plus ikoner som inte laddar (knappen fungerar, inga JS-fel), breddbyte 1440, 320, 768 och 390 px utan sidledsscroll.
+
+## Webbläsarpass 2026-11-25
+
+Headless WebKit (Playwright, iPhone 13-profil) och Firefox 1440 px jämförda med Chromium, live, ljust och mörkt. Detaljer i `HANDOFF.md`.
+
+- [x] Inga skillnader som drabbar en besökare: layout, bilder, språkknapp, språk över navigering, tillbaka och flikar, `color-mix` lika i alla tre motorerna. Rubriktypsnittet ritas tunt i Playwrights WebKit på Windows även i en minimal testsida med `font-variation-settings`, alltså buildens rendering och ingen sidbugg. Riktig iPhone inte testad.
