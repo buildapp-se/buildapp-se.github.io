@@ -55,3 +55,13 @@ UX-audit (ux-checks 6 av 6 pass, skärmbildsgranskning 390 och 1440 px, ljust oc
 - [x] `[P3]` (rättad 2026-11-24, `e825a03`) `integritet.html` "Projekten bakom dörrarna" saknade Dinodecks och ./terminals policyer, båda live 200. Länkade på svenska och engelska.
 - [ ] `[P2]` `integritet.html` säger att varje projekt bakom en dörr har en egen policy, men Flaskor, Beefcake och Bulk har ingen (ingen fil i repona, inga träffar live). Flaskor och Beefcake har konton. Policyn skrivs i respektive app-repo, sedan läggs länken här.
 - [ ] `[P3]` Undertiteln skiljer sig: "webbappar, spel och guider" på `index.html`, "en samling småprojekt" på `om.html` och `integritet.html` (Similarity). Smakfråga, Patrik väljer.
+
+## Granskning 2026-11-25
+
+Fart, tillgänglighet och metadata, mätt live med headless Chromium: 390 px med 4x CPU-strypning och Slow 4G, plus 1440 px. Siffrorna står under `## Audits` i CONTEXT.md.
+
+- [x] `[P3]` (rättad 2026-11-25, `26bc551`) `assets/fonts.css` var den enda renderblockerande begäran på alla tre sidorna. Reglerna står nu inline med preload av två typsnitt: renderblockerande 1 till 0, CLS på index vid 1440 px 0,0105 till 0. LCP oförändrad inom brus (index 602 till 588 ms, median).
+- [x] `[P3]` (rättad 2026-11-25, `2c29d92`) `assets/ai-mark.png` var 512 px och 22 710 B för en 72 px ikon; nu 216 px palett-PNG, 4 254 B, `?v=4`. De fyra översta dörrikonerna (ovanför vecket vid 390 px) laddas inte längre lat. Index överför 274 till 253 KB.
+- [x] Metadata kontrollerad, inget att rätta: unik titel och beskrivning, `lang="sv"`, canonical, `og:image` 1200x630 och favicon på alla tre sidorna; ingen PWA, alltså inget manifest. axe-core 4.14.0: 0 fel på alla tre sidorna i båda bredderna.
+- [ ] `[P3]` Dörrikonerna från apparna är 512 px PNG men visas i 52 till 72 px: Dinodeck 47 KB, Grammat 22 KB, Sipdeck 17 KB, Beefcake 15 KB. Sex app-PNG:er väger sammanlagt 124 KB (uppmätt med curl). En mindre variant görs i respektive app-repo: regeln är att länka appens riktiga ikon, så filen skapas där, inte här.
+- [ ] `[P3]` CLS 0,018 på index vid 390 px (gräns för bra: 0,1): sidhuvudet flyttar `main` när typsnitten byts in efter första målningen på Slow 4G. Kräver justerade reservtypsnitt (`size-adjust`), inte gjort.

@@ -15,9 +15,9 @@ produkt, den är huset, och varje undersida är en dörr.
   SVG:n. `assets/icon-32.png` är fallback för äldre webbläsare och `icon-192.png`
   är apple-touch-icon, eftersom iOS inte stödjer SVG-favicons.
 - `assets/ai-mark.png` och `assets/valheim-mark.svg` är självhostade kopior (Valheims
-  ikon finns bara som data-URI i dess HTML). `ai-mark.png` (512 px, transparenta
-  hörn) är en rendering av `favicon.svg` i repot `ai` ("Två banor"). Byter /ai ikon
-  måste den renderas om här, och `?v=` i `index.html` höjas: Cloudflare och webbläsare
+  ikon finns bara som data-URI i dess HTML). `ai-mark.png` (216 px palett-PNG, 4 254 B,
+  transparenta hörn; dörren visar 72 px gånger 3 i pixeltäthet) är en rendering av `favicon.svg` i repot `ai` ("Två banor"). Byter /ai ikon
+  måste den renderas om här i 216 px, och `?v=` i `index.html` höjas: Cloudflare och webbläsare
   cachar filen i 4 timmar. Hämta inte den nya `?v=`-adressen före deployen, då cachas
   den gamla bilden under den. Övriga appars ikoner refereras direkt via `buildapp.se`.
 
@@ -47,7 +47,7 @@ graph LR
 
 - Frontend: en `index.html` med inline CSS och lite vanilla JS för språktoggeln, inga beroenden
 - Kod: HTML, CSS, JavaScript, inget byggsteg
-- Typsnitt: självhostade i `assets/fonts/`
+- Typsnitt: självhostade i `assets/fonts/`. `@font-face`-reglerna står inline i varje sidas `<head>` (ingen renderblockerande CSS-fil) med preload av Big Shoulders och Plex Sans; `assets/fonts.css` har samma regler och används bara av `og.source.html`, håll dem i takt
 - Data: ingen backend, inga hemligheter
 - Hosting: GitHub Pages, org-rot-repot från `main`, buildapp.se bakom Cloudflare
 
@@ -103,7 +103,7 @@ Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; con
 - npm audit: 2026-09-24, n/a, no package.json
 - Secrets: 2026-09-24, pass, gitleaks 0 findings in 40 commits
 - Actions: 2026-09-24, n/a, no GitHub Actions workflows
-- WCAG 2.2 AA: 2026-09-24, warn, axe 4.13.0 0 violations on buildapp.se (mobile, one page); manual keyboard pass not done
+- WCAG 2.2 AA: 2026-11-25, warn, axe 4.14.0 0 violations on index, om and integritet live at 390 and 1440 px (color-contrast incomplete on 5 to 6 nodes on index, checked by hand 2026-10-06); manual keyboard pass not done
 - UX: 2026-11-24, warn, 6 of 6 script checks pass (index, om, integritet, --interact; was 6 of 6 on 2026-09-24), screenshot review 390 and 1440 px light and dark done; footer orphan separator at 390 px fixed; open: subtitle differs between index and om/integritet (Similarity, taste)
 - Headers (automated): 2026-10-27, pass, 6 of 6 on buildapp.se, Observatory B+ on buildapp.se
 - npm audit (automated): 2026-10-06, n/a, No package.json in repository; evidence C:/dev/aifabriken/.runs/audits/2026-10-06-batch-a/buildapp-se.github.io.json
@@ -115,3 +115,4 @@ Read by the cockpit Audits tab. One `- Label: YYYY-MM-DD, result` per check; con
 - Database: 2026-10-25, none, static site
 - ZAP baseline: 2026-10-27, n/a, static site on GitHub Pages with no server, cookies or forms; headers, TLS and markup are covered by their own columns, so a passive ZAP scan would repeat them
 - Dependabot: 2026-10-29, pass, 0 open alerts
+- Performance: 2026-11-25, pass, live at 390 px with 4x CPU and Slow 4G: LCP index 588 ms, om 504, integritet 584 (median of 3, text LCP, unchanged within noise from 602/516/582 before); CLS index 0,018 mobile, 0 desktop (was 0,011); render-blocking requests 1 to 0; index transfer 274 to 253 KB. Largest asset: Dinodeck icon 47 KB at 512 px shown at 52 to 72 px (owned by the dinodeck repo)

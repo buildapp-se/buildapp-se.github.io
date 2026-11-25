@@ -4,10 +4,21 @@ status: active
 currentGoal: Hålla katalogsidan buildapp.se korrekt när projekten bakom dörrarna ändras
 nextAction: Kontrollera efter några dagar att Web Analytics i Cloudflare-dashboarden visar sidvisningar per sökväg (/sipdeck/, /grammat/ osv) och att beaconen inte blockeras av någon CSP-header som senare sätts i zonen
 blockers: []
-reviewedAt: 2026-11-24
+reviewedAt: 2026-11-25
 ---
 
 # Handoff: buildapp.se
+
+## 2026-11-25: fart, tillgänglighet och metadata (grenen `speed/2026-11-25`, worktree `buildapp-se.github.io-1125s`) - klar
+
+Mätt live med ett headless Playwright-skript (390 px med 4x CPU och Slow 4G, samt 1440 px; LCP, CLS, överföring, renderblockerande begäran, axe-core 4.14.0). Två ändringar, pushade och live via Pages (`26bc551`, `2c29d92`):
+
+- `@font-face` inline i alla tre sidorna plus preload av Big Shoulders och Plex Sans, i stället för `<link>` till `assets/fonts.css`. Renderblockerande 1 till 0, en begäran mindre, CLS på index vid 1440 px 0,0105 till 0.
+- `assets/ai-mark.png` 512 px 22 710 B till 216 px palett-PNG 4 254 B, visuellt lika vid 72 px, `?v=4`. De fyra översta ikonerna laddas direkt (de låg ovanför vecket med `loading="lazy"`).
+
+Före och efter, live, 390 px strypt, median av 3 till 4 körningar: LCP index 602 till 588 ms, om 516 till 504, integritet 582 till 584 (LCP är text och styrs av HTML plus CPU, så ingen mätbar vinst där). Index överför 274 till 253 KB, 17 till 16 begäran. axe 0 fel före och efter. Cachehuvuden: inga hashade filer finns (inget byggsteg), allt får `max-age=14400` från zonen, HTML `max-age=600`.
+
+**Kvar:** app-ikonerna i 512 px (BACKLOG P3, hör till app-repona) och CLS 0,018 på mobil (BACKLOG P3). Mätskriptet ligger utanför repot, i `%TEMP%\aifabriken-lanes\speed-buildapp-se.github.io\measure.mjs`.
 
 ## 2026-11-24: djuppass (grenen `deep/2026-11-24`, worktree `buildapp-se.github.io-deep-1124`) - klar
 
