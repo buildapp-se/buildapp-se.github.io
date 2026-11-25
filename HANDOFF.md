@@ -9,6 +9,14 @@ reviewedAt: 2026-11-25
 
 # Handoff: buildapp.se
 
+## 2026-11-25: preferenspass (grenen `prefs/2026-11-25`, worktree `buildapp-se.github.io-1125t`) - klar
+
+Mörkt läge, minskad rörelse, 200 % text vid 1280 och 390 px och tvingade färger, plus svensk språkgranskning av alla tre sidorna. Fem rättningar i `1bb8bb4`, detaljer och mätmetod i BACKLOG `## Preferenspass 2026-11-25`. Viktigast: `om.html` och `integritet.html` scrollade i sidled vid 320 och 360 px redan utan zoom, för att skylten inte radbröts.
+
+- Fälla: `flex-wrap` på skylten ensamt bröt mobilhuvudet på index i normal storlek, eftersom radbrytningen räknar med märkets fulla bredd. `.brand{flex:1 1 min-content;max-width:max-content}` behåller layouten; kontrollerat mot live med `same.mjs`.
+- Fälla: tvingade färger kan inte avläsas med `getComputedStyle` (värdena skilde sig fast knapparna såg lika ut); skriptet jämför pixlar i stället.
+- **Kvar:** inget. Engelska texter blandar brittisk och amerikansk stavning (`labour`/`Labor`, `organisational`), utanför passets svenska omfång.
+
 ## 2026-11-25: webbläsarpass (grenen `xb/2026-11-25`, worktree `buildapp-se.github.io-1125x`) - klar
 
 Alla tidigare test gick i Chromium. Nu headless WebKit (Playwright, iPhone 13-profil, 390 px med touch) och Firefox 1440 px, plus WebKit och Chromium i samma bredder som jämförelse, ljust och mörkt, mot live. Playwright-core 1.64.1 (webkit-2370, firefox-1555, chromium-1248). Skript utanför repot: `%TEMP%/aifabriken-lanes/xb-buildapp-se.github.io/xb.mjs` och `vf.mjs`. Ingen riktig iPhone är testad.

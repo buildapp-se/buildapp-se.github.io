@@ -81,3 +81,14 @@ Headless Chromium med bfcache påslaget, mot lokal server och live. Skriptet lig
 Headless WebKit (Playwright, iPhone 13-profil) och Firefox 1440 px jämförda med Chromium, live, ljust och mörkt. Detaljer i `HANDOFF.md`.
 
 - [x] Inga skillnader som drabbar en besökare: layout, bilder, språkknapp, språk över navigering, tillbaka och flikar, `color-mix` lika i alla tre motorerna. Rubriktypsnittet ritas tunt i Playwrights WebKit på Windows även i en minimal testsida med `font-variation-settings`, alltså buildens rendering och ingen sidbugg. Riktig iPhone inte testad.
+
+## Preferenspass 2026-11-25
+
+Headless Chromium mot lokal server: mörkt läge, `reducedMotion: reduce`, 200 % text (rotens `font-size`) vid 1280 och 390 px, `forcedColors: active`, alla tre sidorna på svenska och engelska. Skript utanför repot: `%TEMP%/aifabriken-lanes/prefs-buildapp-se.github.io/prefs.mjs` (30 kontroller) och `same.mjs` (lådor mot live i normal storlek). Före: 14 fel, efter: 30 av 30 pass.
+
+- [x] `[P2]` (rättad 2026-11-25, `1bb8bb4`) `om.html` och `integritet.html` scrollade i sidled vid 320 och 360 px även utan zoom (sidbredd 366 px live): skylten med SV/EN och "Tillbaka" radbröts inte. `.sign-row` får radbrytas och `.brand` krymper först (`flex:1 1 min-content;max-width:max-content`), så index ser ut som förut i 320 till 1280 px.
+- [x] `[P3]` (rättad 2026-11-25, `1bb8bb4`) Tvingade färger: aktiv SV/EN-knapp såg likadan ut som den inaktiva på alla tre sidorna. Nu `Highlight`/`HighlightText`.
+- [x] `[P3]` (rättad 2026-11-25, `1bb8bb4`) `index.html` hade `scroll-behavior:smooth` även med minskad rörelse. Nu bara under `prefers-reduced-motion: no-preference`.
+- [x] `[P3]` (rättad 2026-11-25, `1bb8bb4`) 200 % text vid 390 px: sidhuvudet och långa ord (`static.cloudflareinsights.com`, "ARBETARRÖRELSENS") gick utanför skärmen. Radbryts nu.
+- [x] `[P3]` (rättad 2026-11-25, `1bb8bb4`) Språk: Flaskors dörr "dela källaren med de du bor med" blev "med dem du bor med". Övrig svensk text genomläst utan fel: inga tankstreck, datum "11 oktober 2026", inga decimaltal.
+- [x] Mörkt läge utan fel: ingen vit blixt (bakgrunden mörk innan sidan laddat klart), all text minst 4,5:1 (3:1 för stor text), alla ikoner laddar.
