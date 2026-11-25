@@ -15,8 +15,8 @@ Mörkt läge, minskad rörelse, 200 % text vid 1280 och 390 px och tvingade fär
 
 - Fälla: `flex-wrap` på skylten ensamt bröt mobilhuvudet på index i normal storlek, eftersom radbrytningen räknar med märkets fulla bredd. `.brand{flex:1 1 min-content;max-width:max-content}` behåller layouten; kontrollerat mot live med `same.mjs`.
 - Fälla: tvingade färger kan inte avläsas med `getComputedStyle` (värdena skilde sig fast knapparna såg lika ut); skriptet jämför pixlar i stället.
-- **Deploy:** pushat till `main` 2026-11-25 17:00, men Pages-körningen 45650367730 föll i deploy-steget (HTTP 500, GitHub-störning på Actions och Pages enligt githubstatus.com). Omkörning och `POST pages/builds` gav också 500. Nästa push till `main` deployar; kontrollera live med `curl -s https://buildapp.se/om.html | grep forced-colors`.
-- **Kvar:** live-verifiering efter deploy. Engelska texter blandar brittisk och amerikansk stavning (`labour`/`Labor`, `organisational`), utanför passets svenska omfång.
+- **Deploy:** första Pages-körningen (45650367730) föll i deploy-steget med HTTP 500 under en GitHub-störning; omkörning gav också 500. Nästa push (`83ef117`, körning 45652340144) deployade. Live 2026-11-25 17:20: `prefs.mjs` 30 av 30 pass mot buildapp.se, sidbredd 320 och 360 px utan sidledsscroll på alla tre sidorna.
+- **Kvar:** inget. Engelska texter blandar brittisk och amerikansk stavning (`labour`/`Labor`, `organisational`), utanför passets svenska omfång.
 
 ## 2026-11-25: webbläsarpass (grenen `xb/2026-11-25`, worktree `buildapp-se.github.io-1125x`) - klar
 
