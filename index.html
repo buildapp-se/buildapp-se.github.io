@@ -317,10 +317,16 @@ arbete</span></span>
     buttons.forEach(function(b){ var on = b.dataset.lang === lang; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
   }
 
-  var saved = null;
-  try { saved = localStorage.getItem(KEY); } catch (e) { saved = null; }
-  var guess = (navigator.language || 'sv').toLowerCase().indexOf('sv') === 0 ? 'sv' : 'en';
-  apply(saved || guess);
+  // Back-knappen kan visa sidan ur bfcache, och en annan flik kan ha bytt språk: läs om valet då.
+  function load(){
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (saved !== 'sv' && saved !== 'en') saved = (navigator.language || 'sv').toLowerCase().indexOf('sv') === 0 ? 'sv' : 'en';
+    apply(saved);
+  }
+  load();
+  addEventListener('pageshow', function(e){ if (e.persisted) load(); });
+  addEventListener('storage', load);
 
   toggle.addEventListener('click', function(e){
     var btn = e.target.closest('button[data-lang]');
